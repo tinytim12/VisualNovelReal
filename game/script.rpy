@@ -304,7 +304,7 @@ label start:
     
     n "She's more like a lily in a pond."
     
-    n "Always in the distance, but out of reach."
+    n "Always visible in the distance, but out of reach."
     
     n "It's only in this train when she's within my grasp."
     
@@ -316,20 +316,335 @@ label start:
     
     #approach alexis
     
+    # her sprite fades in
+    
     nvl clear
     
-    n "Oh shit..."
+    n "Her eyes..."
     
-    n "Why does she look like I'm about to rob her?"
+    n "I never thought that color could exist."
     
-    n "I don't have any kind of creepy smile on my face, right?!"
+    n "...."
+    
+    nvl clear
+    
+    na "..."
     
     a "..."
     
-    n "Damn, say something!" 
+    na "..."
     
-    n "Something, anything!"
+    n "She's inching away..."
     
+    n "I have to open my mouth or I'll just be another creep!"
+    
+    nvl clear
+    
+    na "Which stop are you getting off at!"
+    
+    a "..."
+    
+    a "N-newton station."
+    
+    n "That's an obvious lie, Newton's in the complete opposite direction..."
+    
+    nvl clear
+    
+    na "Sorry, I don't mean to shout so loud, my voice is just like that, and the train's really echoey underground, so that adds to the volume, you know what I mean?"
+    
+    a "..."
+    
+    a "Yes."
+    
+    na "Um, anyway, um, right now I haven't eaten or drunk lately and I feel like I'm going to faint..."
+    
+    n "I'm not sure what's come over me, but I'm going to Hell for all the words that's spilling out of my mouth."
+    
+    n "There's nothing wrong with my body save my out of control beating heart."
+        
+    na "Do you have some Panadol? I'm not sure if - "
+    
+    a "Oh yes! I have some right here. Is three tablets enough?"
+    
+    na "Yes, thank you so much!" 
+    
+    na "Mind if we sit down? It's getting a little blurry..."
+    
+    a "Oh!"
+    
+    a "Come on, here."
+    
+    #they sit down
+    
+    n "So it's not exactly the most ethical way to start a conversation, but it's working!"
+    
+    n "The best part is when I bow my head and suddenly act like I'm in great pain."
+    
+    n "She automatically moves in close to see what's wrong, and her soft hair tickles my arm."
+    
+    n "If I keep this charade up any longer, I may not be able to live with myself for a few weeks."
+    
+    n "I notice her sketchbook, the one in which she scribbles in all day, and it's poking out of her slingbag."
+    
+    nvl clear
+    
+    na "Hey, what's that inside your bag?"
+    
+    a "This? It's just a book."
+    
+    na "Mind if I have a look inside?"
+    
+    na "Sorry, it's just, I need something to focus on, or I'll really lose conscienceness."
+    
+    a "Really?! Should I call an ambulance?"
+    
+    na "No, no, just reading something is okay. It's called a grounding technique, my doctor taught me that."
+    
+    na "Even if you have just doodles written down, just looking at them will help."
+    
+    n "She actually believed that?!"
+    
+    n "Like taking candy from a baby, except the baby is turning out more and more to be the girl of my dreams..."
+    
+    n "That straightforward naviety of hers is so cute, it's maddening."
+    
+    nvl clear
+    
+    #flips through sketchbook
+    
+    a "Erm...is it okay if you only see the first few pages?"
+    
+    n "Is she embarassed?"
+    
+    n "These drawings of hers are really, really good though."
+    
+    n "I don't know how many flavours of 'punk' there are apart from steampunk or cyberpunk, but she's all the science fiction styles down."
+    
+    n "Buildings, cities, skyscrapers, a few rough sketches of characters, all dressed up in their own unique style."
+    
+    n "There's no way single person in the entire school would even think of drawing something like this."
+    
+    nvl clear
+    
+    na "This is amazing."
+    
+    na "Where did you learn all this?"
+    
+    a "I'm happy you like it."
+    
+    a "My dad was a painter, so I just learned from him."
+    
+    na "This is seriously Picasso tier."
+    
+    na "You could earn millions from this!"
+    
+    a "Nononono, no one would buy these!"
+    
+    n "I was exaggerating, of course, but overcompliments like these seemed like the best way to her heart.
+        
+    na "And what are these?"
+    
+    n "A few pages on, the fantastical drawings ceased, and more mundane everyday sketches emerged."
+    
+    n "Most of them were random places around the city."
+       
+    nvl clear 
+    #time passes
+    
+    a "Sorry, do you dislike them?"
+    
+    a "I make it a schedule to draw from real life reference every few weeks."
+    
+    a "My father always said that I needed to branch out into other styles, so I can find something I'm can really specialize in."
+    
+    na "If you want my take on it, anybody can draw anything from real life."
+    
+    na "But it takes true talent to draw from imagination."
+    
+    na "Your first few drawings are the best ones, you should focus on those."
+    
+    n "She looked at me as if she would a lighthouse in the middle of a stormy sea, and I inwardly cheered."
+    
+    n "And to think I made that piece of advice up on the spot!"
+    
+    nvl clear 
+    
+    #time passes
+    a "...A concept artist would be really hard. Everyone wants to be one. Some people work for ten years before they finally get that position."
+    
+    na "A concept artist? You mean, like for a movie?"
+    
+    a "Movies are great, but they're too competitive. I'm thinking maybe for a video game studio."
+    
+    na "Ubisoft! Or Blizzard!"
+    
+    a "Those companies are competitive too! I won't get in."
+    
+    a "Maybe in a small studio..."
+    
+    na "Let me tell you something."
+    
+    na "You should drop out of school and send your drawings to Ubisoft right now."
+    
+    a "I told you, I won't get it!"
+    
+    a "I'm going to an art university after this."
+    
+    na "You sure you're going to need it?"
+    
+    a "Big companies require a university education!"
+    
+    na "Eh, degrees are overated."
+    
+    na "Did you know Steve Jobs dropped out of college?"
+    
+    a "Oh, really?!" 
+    
+    na "Yeah, also Mark Zuckerburg, and Lady Gaga."
+    
+    a "Who's Mark Zuckerburg?"
+    
+    na "You seriously don't know?"
+    
+    a "It sounds familiar, sorry..."
+    
+    na "He was the first man on the moon, how could you not know him?"
+    
+    a "First man on the moon - "
+    
+    a "No wait, are you sure...?"
+    
+    na "I was kidding."
+    
+    na "Mark Zuckerburg was the guy who invented Facebook."
+    
+    a "Oh, that guy!"
+    
+    a "My father was talking about him."
+    
+    a "He said that I shouldn't follow his example."
+    
+    na "Of what, dropping out?"
+    
+    a "Yes. He said I wasn't smart enough."
+    
+    na "Anyone who carries around a sketchbook like that a freaking genius."
+    
+    a "What do you mean?"
+    
+    na "Well..."
+    
+    na "You sit down in the middle of everyone, and you can concentrate enough to sketch a full drawing..."
+    
+    na "I could never do it."
+    
+    a "Anyone can learn to draw, if they practiced." 
+    
+    na "It's not a matter of practice."
+    
+    na "It's about...I mean, we're at school, aren't we? Doing our maths and science and studying to become the nation's next greatest doctors."
+    
+    na "So...it's not a matter of whether I start drawing or not, in the end it won't matter, right?"
+    
+    a "I get what you mean."
+    
+    a "But art is like that."
+    
+    a "You have to make sacrifices."
+    
+    a "I don't think I'm especially talented."
+    
+    a "So I have to keep working hard."
+    
+    na "No, you're definitely special."
+    
+    na "You know how I know?"
+    
+    a "How?"
+    
+    na "Your eyes." 
+    
+    na "They're the eyes of a chosen one."
+    
+    a "Chosen one?"
+    
+    na "(She giggled at that one.)"
+    
+    na "(She was beginning to let more of her show.)"
+    
+    a "My father says it's just pigments."
+    
+    na "Pigments that are a one in a million."
+    
+    a "We're all special in our own way."
+    
+    na "Yeah, now that you mention it, I'm a pretty big deal myself."
+    
+    a "Oh?"
+    
+    na "(I slipped my hand out of my pocket and showed it to her.)"
+    
+    na "(Normally, I would be embarassed to show it to anyone, but this girl could accept anything."
+    
+    na "(On the back of my right hand, was a dark birthmark in the shape of a star.)"
+    
+    na "People ask me if this was a tattoo, or was drawn on."
+    
+    na "I was born with this."
+    
+    a "It's beautiful."
+    
+    na "You can touch it if you want."
+    
+    na "(She giggled again.)"
+    
+    a "You seem really proud of it.
+    
+    na "There has to be a reason why God marked me this way, you know?"
+    
+    na "Just the same way he marked you."
+    
+    na "So don't count yourself out. You're definitely special."
+    
+    a "And so are you!"
+    
+    na "(My brain moved on autopilot.)"
+    
+    na "(Just an hour earlier I never would have dreamed of saying this.)"
+    
+    na "(But right now, I was never so sure of anything else in my life.)"
+    
+    na "(I squared my shoulders and looked her dead in the eye.)"
+    
+    na "I didn't get your name."
+    
+    a "It's Alexis."
+    
+    a "And yours?"
+    
+    na "I'm Zack."
+    
+    na "Alexis, let's make a video game together."
+    
+    a "..."
+    
+    a "Wow."
+    
+    a "Do you mean, an actual video game?"
+    
+    na "You've got the art, and I can learn some programming."
+    
+    na "I'm serious, Alexis."
+    
+    na "I never wanted to end up a scientist or a doctor in the first place."
+    
+    na "And you don't want to either."
+    
+    na "Together, I'm sure we can..."
+    
+    # train screeches
+    
+    #screen goes dark
     
     
 
