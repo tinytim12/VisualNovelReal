@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 45: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        n "{vspace=20}Point A. Point B.
+File "game/script.rpy", line 30: expected statement.
+    renpy.pause(3, hard=True)
+                             ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Sun Sep 29 18:51:36 2019
+Tue Oct 15 19:42:37 2019

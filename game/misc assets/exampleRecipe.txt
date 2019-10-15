@@ -1,0 +1,5 @@
+Layers
+- Effect 2 50% opacity
+- Effect 1 15% opacity
+- Background Inverted, Edged, Selectiv Gaussian blurred radius 20, max delta 195
+- Background Normal Selective Gaussian blurred radius 20, max delta 195 

@@ -1,26 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 7, in script
-    define n = narrator_nvl
-  File "game/script.rpy", line 7, in <module>
-    define n = narrator_nvl
-NameError: name 'narrator_nvl' is not defined
+  File "game/script.rpy", line 33, in script
+    scene stationSide with flash
+  File "game/script.rpy", line 33, in <module>
+    scene stationSide with flash
+NameError: name 'flash' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 7, in script
-    define n = narrator_nvl
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 2106, in execute
-    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "game/script.rpy", line 33, in script
+    scene stationSide with flash
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 1383, in execute
+    paired = renpy.python.py_eval(self.paired)
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 2035, in py_eval
+    return py_eval_bytecode(code, globals, locals)
   File "D:\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 2028, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 7, in <module>
-    define n = narrator_nvl
-NameError: name 'narrator_nvl' is not defined
+  File "game/script.rpy", line 33, in <module>
+    scene stationSide with flash
+NameError: name 'flash' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 VisualNovel 1.0
-Sun Sep 29 13:21:15 2019
+Tue Oct 15 19:39:51 2019

@@ -8,6 +8,17 @@ define n = nvl_narrator
 define na = Character("Zack")
 define a = Character("Alexis")
 
+
+image alexis surprised = "Alexis/alexis_surprised.png"
+
+image stationSide = "Bg/stationSidevers2.jpg"
+
+
+
+define flash = Fade(1, 1, 1, color="#fff")
+
+
+
 # The game starts here.
 
 label start:
@@ -16,37 +27,47 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
     
+    show alexis surprised
+    
+    na "This is a test."
+    
+
+    
+    scene stationSide with flash
+
     n "When trains are born, they have one function." 
     
-    n "{vspace=20}They move from point A to point B."
+    n "{vspace=50}They move from point A to point B."
     
-    n "{vspace=20}When millions of dollars construct one ten-carriage unit, there is one purpose."
+    nvl clear
+    
+    n "{vspace=15}When millions of dollars construct one ten-carriage unit, there is one purpose."
 
-    n "{vspace=20}They travel from point A to point B."
+    n "{vspace=15}They travel from point A to point B."
     
-    n "{vspace=20}When placed on the rails and their wheels locked in, there is only one home for them."
+    n "{vspace=15}When placed on the rails and their wheels locked in, there is only one home for them."
     
-    n "{vspace=20}The road that lies from point A to point B."
+    n "{vspace=15}The road that lies from point A to point B."
     
     nvl clear
     
     n "If a train were to rebel, it would be impossible."
     
-    n "{vspace=20}There are laws in place."
+    n "{vspace=15}There are laws in place."
     
-    n "{vspace=20}The train can only move forward."
+    n "{vspace=15}The train can only move forward."
     
-    n "{vspace=20}It cannot move left or right."
+    n "{vspace=15}It cannot move left or right."
     
-    n "{vspace=20}It cannot go past the end of the track."
+    n "{vspace=15}It cannot go past the end of the track."
 
-    n "{vspace=20}It cannot remain in place or go too fast."
+    n "{vspace=15}It cannot remain in place or go too fast."
     
     nvl clear
     
     n "This is the existence of a train."
     
-    n "{vspace=20}Point A. Point B."
+    n "{vspace=50}Point A. Point B."
     
     nvl clear
     
@@ -132,7 +153,7 @@ label start:
     
     n "My legs turn, and they shuffle, and instead of fleeing I approach the carnage."
     
-    n "The darkness begins to lift and I start to make out her dress.  
+    n "The darkness begins to lift and I start to make out her dress.  "
     
     nvl clear
     
@@ -149,6 +170,7 @@ label start:
     n "{vspace=50}...to Point B"
     
     nvl clear
+    
     
     #change scene 
     
@@ -268,7 +290,7 @@ label start:
     
     n "I don't even know her name!"
     
-    *train comes*
+    #*train comes*
     
     n "Damn the train's coming!"
     
@@ -440,7 +462,7 @@ label start:
     
     a "Nononono, no one would buy these!"
     
-    n "I was exaggerating, of course, but overcompliments like these seemed like the best way to her heart.
+    n "I was exaggerating, of course, but I'd heard overcompliments are the best way to a girl's heart."
         
     na "And what are these?"
     
@@ -598,7 +620,7 @@ label start:
     
     na "(She giggled again.)"
     
-    a "You seem really proud of it.
+    a "You seem really proud of it."
     
     na "There has to be a reason why God marked me this way, you know?"
     
@@ -624,6 +646,14 @@ label start:
     
     na "I'm Zack."
     
+    n "I could imagine the scene as clear as day."
+    
+    n "The two of us, perched on either side of a desk, our heads bent over our work."
+    
+    n "No different than what my life usually was - no, that was definitely different."
+    
+    n "Because, anytime, I could always could look up and watch those violet eyes create the coolest art I would ever have the privilege to experience."
+    
     na "Alexis, let's make a video game together."
     
     a "..."
@@ -636,15 +666,17 @@ label start:
     
     na "I'm serious, Alexis."
     
-    na "I never wanted to end up a scientist or a doctor in the first place."
+    na "I never wanted to end up like the rest of them in the first place."
     
     na "And you don't want to either."
     
-    na "Together, I'm sure we can..."
+    na "Together, I'm sure we can - "
     
     # train screeches
     
     #screen goes dark
+    
+    play sound "sound/crash.wav" fadeout
     
     
 
