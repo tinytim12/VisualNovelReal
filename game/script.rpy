@@ -850,13 +850,21 @@ label start:
     
     na "I don't get what you mean."
     
-    na "(We had reached the end of the first carriage, and there was a door to the next one blocking our way."
+    n "She ignored that question and continued to march forward."
     
-    na "(Ignoring my last question, she stepped forward to pull it open.)"
+    n "What was wrong with her?"
+    
+    n "The other passengers in the train were probably sitting in their seats, obediently waiting for the crisis to resolve."
+    
+    n "But instead, we walked down the carriage like panicked idiots."
+    
+    n "We soon reached the door that divided this carriage from the next carriage."
+    
+    n "She stepped forward to pull it open."
     
     #shudder
     
-    na "(The door opened a quarter of the way before jerking to a stop.)"
+    na "(The door opened a single centimeter before jerking to a stop.)"
     
     a "..."
     
@@ -880,7 +888,7 @@ label start:
     
     n "The air of the train was getting to me."
     
-    n "At some point the air conditioning must have shut off, because the inside of the carriage was dryer than the Sahara desert."
+    n "All that action must have worked it up, because my mouth was dryer than the Sahara desert."
     
     n "So I stood there sweating my guts out, and watched Alexis rummage through the seats as if searching for a hidden pot of gold."
     
@@ -890,9 +898,96 @@ label start:
     
     na "(My voice came out rougher than I intended.)"
     
-    a "I'm looking for a ."
+    na "(And she didn't even bother to look around.)"
+    
+    a "I'm looking for the fishing pole."
     
     na "What?"
+    
+    a "..."
+    
+    n "And apparently that didn't even deserve a reply."
+    
+    n "I had thought she was just scared, but I realised what she was really communicating was that she thought I was absolutely useless."
+    
+    n "What was the hurry, anyway?"
+    
+    n "She's just going off on her own..."
+    
+    n "..."
+    
+    n "Oh, that's right!"
+    
+    nvl clear
+    
+    n "In every carriage, there's an emergency communication button."
+    
+    n "You simply press the red button, and you can contact the driver directly through an intercom."
+    
+    n "Alexis must have been so lost in her own world she must have forgotten about it."
+    
+    n "I could just contact the driver and let him explain the whole situation."
+    
+    nvl clear
+    
+    na "(I pressed the button firmly, and spoke clearly into the microphone.)"
+    
+    na "Hello? Is this the driver?"
+    
+    i "..."
+    
+    na "Hello? Can you hear me?"
+    
+    i "..."
+    
+    n "Was the intercom not working?"
+    
+    n "No, that wasn't possible. I had heard the beep indicating that my voice was live."
+    
+    n "My voice was being transmitted in the driver's cabin now, but no one was listening."
+    
+    n "Wasn't he there just a few minutes ago, giving that announcement?"
+    
+    n "Had he left the cabin for some reason?"
+    
+    nvl clear
+    
+    n "I peered into the carriages ahead, trying to see if the driver's room was visible from here."
+    
+    n "But the handles and doors and seats meshed together into one unrecognisable jungle gym, such that anything past the third carriage could have been easily hidden."
+    
+    n "As I craned my head trying to get a better view, the veins of my heart froze ice cold."
+    
+    nvl clear
+    
+    n "There was nothing in sight save for the insides of the train."
+    
+    n "No driver, no passengers, no people, nothing."
+    
+    n "You'd expect at least one or two passengers to be in the other carriages, right?!"
+    
+    n "It wasn't as if this was 10pm in the middle of the night?"
+    
+    nvl clear
+    
+    n "Did we really board the train with no one else but ourselves?"
+    
+    n "That was unextremely unlikely. Maybe there had been passengers, but they had disappeared somewhere else."
+    
+    n "That thought made something rise up in my throat, and I forced the sudden terror back down."
+    
+    n "I didn't want to think about where they had gone."
+    
+    n "If they had rushed towards the emergency exit as well, like Alexis was trying to do, did that mean that she was right?"
+    
+    n "That we needed to get off at soon as possible?"
+    
+    nvl clear 
+    
+    
+    
+   
+    
 
         `
     
