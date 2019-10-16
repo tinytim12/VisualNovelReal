@@ -8,6 +8,8 @@ define n = nvl_narrator
 define na = Character("Zack")
 define a = Character("Alexis")
 
+define i = Character("Intercom")
+
 
 image alexis surprised = "Alexis/alexis_surprised.png"
 
@@ -34,7 +36,7 @@ label start:
 
     
     scene stationSide with flash
-
+    show alexis suprised
     n "When trains are born, they have one function." 
     
     n "{vspace=50}They move from point A to point B."
@@ -652,7 +654,7 @@ label start:
     
     n "No different than what my life usually was - no, that was definitely different."
     
-    n "Because, anytime, I could always could look up and watch those violet eyes create the coolest art I would ever have the privilege to experience."
+    n "Because, anytime, I could always could look up and watch those violet eyes stare into worlds unknown.."
     
     na "Alexis, let's make a video game together."
     
@@ -678,6 +680,230 @@ label start:
     
     play sound "sound/crash.wav" fadeout
     
+    $ renpy.pause(7, hard=True)
+    
+    n "Panic."
+    
+    #flash?
+    
+    n "Terror."
+    
+    #flash
+    
+    n "Despair."
+    
+    #flash?
+    
+    n "The ugly and the desperate clawing for their lives."
+        
+    n "I could see it all."
+    
+    n "Standing up with my flayed skin dangling down, I could believe."
+    
+    n "That in this world, there was a Hell on Earth - "
+    
+    nvl clear
+    
+    #flash
+    
+    na "Gaaarrggh!"
+    
+    n "What -"
+    
+    n "Where am I - "
+    
+    a "..."
+    
+    nvl clear
+    
+    n "The train..."
+    
+    n "it's not moving anymore."
+    
+    n "I'm on the ground."
+    
+    n "That means the train must stopped so hard I was sent flying."
+    
+    a ",,,"
+    
+    n "Alexis...it looks like she was roughed up a bit too."
+    
+    nvl clear
+    
+    a "..."
+    
+    n "These bloody trains."
+    
+    n "I know people were complaining at the breakdowns recently, but it was just ridiculous."
+    
+    n "What if I, or Alexis, had gotten seriously hurt?"
+    
+    n "Without thinking my fist slammed into the pole next to me."
+    
+    nvl clear
+        
+    n "No, wait..."
+    
+    n "If I calmed down enough to think about it, this was the perfect opportunity."
+    
+    n "I heard girls got scared easily when it came to situations like this."
+    
+    n "If the only other person close to them at the moment was a guy, then..."
+    
+    n "They called this the suspension bridge effect."
+    
+    n "Alright. The gloves are coming off."
+    
+    n "Playing Mr Hero shouldn't be too hard, especially if it's with a girl like her."
+    
+    nvl clear
+    
+    na "Alexis, are you okay?"
+    
+    na "Are you hurt anywhere?"
+    
+    a "..."
+    
+    na "Don't worry. I'm sure they'll get us out soon."
+    
+    a "..."
+    
+    na "(She seems more shellshocked than I expected.)"
+    
+    na "(Does she have a fear of these sort of situations?)"
+    
+    na "Well, there's point in standing around."
+    
+    na "Let's just have a seat and wait for them to arrive."
+    
+    a "..."
+    
+    a "No."
+    
+    a "We can't wait."
+    
+    na "What?"
+
+    a "We have to get out of this tunnel."
+    
+    na "(Was it my imagination, or was her voice coming out huskier?)"
+    
+    na "(As if she had aged ten years in a single instant, such was the seriousness of her tone.)"
+    
+    na "Look, Alexis, calm down."
+    
+    na "Where is there for us to go? We're in the middle of the tunnel."
+    
+    na "Let's wait for help to arrive."
+    
+    a "There should be an emergency exit at the end of the train."
+    
+    a "Let's head there."
+    
+    na "(Without warning, she brushed past me and started moving down the carriage.)"
+    
+    na "(Man, she must be terrified of her wits.)"
+    
+    n "..."
+    
+    n "What am I still thinking, this isn't good!"
+    
+    n "If she's still scared, that means I'm not doing my job!"
+    
+    n "Man up, man up!"
+    
+    nvl clear
+    
+    na "(I quickly darted up to walk in front of her)."
+    
+    na "It's gonna be a long walk to the end."
+    
+    n "We had gotten on the train in the exact middle carriage, which meant that both ends of the train were equally as far from us."
+    
+    n "I noticed Alexis was heading towards the back of the train, not towards the front."
+    
+    n "Which was weird, because the driver of the train was located at the front. If anything, asking him for a help would be more sensible, instead of panicking and straight away opening the emergency exit at the back."
+    
+    n " I was debating how to tell her this, but then conveniently the intercom above us started to speak."
+    
+    nvl clear
+    
+    i "{cps = *0.7} Dear...passengers. {/cps}"
+    
+    i "{cps = *0.7} The train...is experiencing...a momentary delay." 
+    
+    i "{cps = *0.7} Please...remain in your...seats..."
+    
+    i "{cps = *0.7} The train...will resume...shortly"
+    
+    na "See, There's nothing to worry about."
+    
+    a "..."
+    
+    a "Don't trust him."
+    
+    na "What? Trust who?"
+    
+    a "The conductor."
+    
+    a "We'll be safe if we get off this train."
+    
+    na "I don't get what you mean."
+    
+    na "(We had reached the end of the first carriage, and there was a door to the next one blocking our way."
+    
+    na "(Ignoring my last question, she stepped forward to pull it open.)"
+    
+    #shudder
+    
+    na "(The door opened a quarter of the way before jerking to a stop.)"
+    
+    a "..."
+    
+    a "I should have known."
+    
+    na "It's stuck?"
+    
+    na "Let me try!"
+    
+    na "(I overexaggerated my attempts at first, huffing and puffing like a true man worked.)"
+    
+    na "(But even when I genuinely gave it my best, the door wouldn't budge.)"
+    
+    na "(Do train doors normally jam this badly?)"
+    
+    na "(It's the first time I've heard of this.)"
+    
+    a "There should be a way to open it." 
+    
+    na "(Again, as if barely acknowledging my presence, she turn around and began examining the train.)"
+    
+    n "The air of the train was getting to me."
+    
+    n "At some point the air conditioning must have shut off, because the inside of the carriage was dryer than the Sahara desert."
+    
+    n "So I stood there sweating my guts out, and watched Alexis rummage through the seats as if searching for a hidden pot of gold."
+    
+    n "Nothing about this situation made any sense."
+    
+    na "What are you doing?!"
+    
+    na "(My voice came out rougher than I intended.)"
+    
+    a "I'm looking for a ."
+    
+    na "What?"
+
+        `
+    
+    
+    
+    
+    
+    
+    
+    
+   
     
 
     show eileen happy
