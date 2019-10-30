@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 30: expected statement.
-    renpy.pause(3, hard=True)
-                             ^
+File "game/script.rpy", line 1132: expected statement.
+    *moves closer to her
+                        ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Tue Oct 15 19:42:37 2019
+Mon Oct 28 13:40:38 2019

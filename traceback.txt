@@ -1,28 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 33, in script
-    scene stationSide with flash
-  File "game/script.rpy", line 33, in <module>
-    scene stationSide with flash
-NameError: name 'flash' is not defined
+  File "game/script.rpy", line 309, in script
+    
+  File "renpy/common/000statements.rpy", line 268, in execute_play_sound
+    renpy.sound.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "game/script.rpy", line 309, in <module>
+    
+NameError: name 'stopTrain' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 33, in script
-    scene stationSide with flash
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 1383, in execute
-    paired = renpy.python.py_eval(self.paired)
+  File "game/script.rpy", line 309, in script
+    
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 1947, in execute
+    self.call("execute")
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 1935, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\statements.py", line 277, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 268, in execute_play_sound
+    renpy.sound.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
   File "D:\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 2035, in py_eval
     return py_eval_bytecode(code, globals, locals)
   File "D:\Downloads\renpy-7.3.2-sdk\renpy\python.py", line 2028, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 33, in <module>
-    scene stationSide with flash
-NameError: name 'flash' is not defined
+  File "game/script.rpy", line 309, in <module>
+    
+NameError: name 'stopTrain' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 VisualNovel 1.0
-Tue Oct 15 19:39:51 2019
+Sun Oct 27 17:38:58 2019

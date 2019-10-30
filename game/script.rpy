@@ -10,15 +10,27 @@ define a = Character("Alexis")
 
 define i = Character("Intercom")
 
+define crash = "sound/crash.wav"
+define ambientTrain = "sound/ambientTrain.wav"
+define doorCloseTrain = "sound/doorCloseTrain.wav"
+define wind = "sound/wind.wav"
+define stopTrain = "sound/stopTrain.wav"
+define ambientStation = "sound/ambientStation.wav"
 
 image alexis surprised = "Alexis/alexis_surprised.png"
+image alexis angry = "Alexis/alexis_angry.png"
+image alexis determined = "Alexis/alexis_determined.png"
+image alexis sad = "Alexis/alexis_sad.png"
+image alexis smiling = "Alexis/alexis_smiling.png"
+image alexis thinking = "Alexis/alexis_thinking.png"
+image alexis worried = "Alexis/alexis_worried.png"
+
 
 image stationSide = "Bg/stationSidevers2.jpg"
 
 
 
 define flash = Fade(1, 1, 1, color="#fff")
-
 
 
 # The game starts here.
@@ -32,11 +44,11 @@ label start:
     show alexis surprised
     
     na "This is a test."
+        
+    scene black 
     
-
+    play sound wind loop fadein 1
     
-    scene stationSide with flash
-    show alexis suprised
     n "When trains are born, they have one function." 
     
     n "{vspace=50}They move from point A to point B."
@@ -171,10 +183,14 @@ label start:
     
     n "{vspace=50}...to Point B"
     
+    stop sound
+    
     nvl clear
     
-    
+    scene stationSide with flash
     #change scene 
+    
+    play sound ambientStation
     
     #Now we are in a brightly lit station
     
@@ -206,9 +222,9 @@ label start:
     
     nvl clear
     
-    n "But right now, any viewers tuning in are in for a treat."
+    n "But today, any viewers tuning in are in for a treat."
     
-    n "No joke, my hearts pumping like crazy and I can't stop squeezing my fingers."
+    n "No joke, right now, my heart's pumping like crazy and I can't stop squeezing my fingers."
     
     n "Because, just two meters away from me, sitting on the next bench over, is her."
     
@@ -294,6 +310,8 @@ label start:
     
     #*train comes*
     
+    play sound stopTrain fadein 1.0
+    
     n "Damn the train's coming!"
     
     n "I don't know which station she gets off."
@@ -305,6 +323,10 @@ label start:
     n "I have to follow her..."
     
     nvl clear
+    
+    stop sound
+    
+    play sound ambientTrain loop fadein 1.0
     
     n "...The train's empty."
     
@@ -320,11 +342,11 @@ label start:
     
     n "This is driving me crazy."
     
-    n "As the distance to the next station nears, my anxiety keeps shooting up."
+    n "The next station's only three minutes, and she might get off!."
     
     n "This is the only chance I have."
     
-    n "Her existence is like a dandelion in the wind - no, that's not entirely accurate."
+    n "Her existence was like a dandelion in the wind - no, that's not entirely accurate."
     
     n "She's more like a lily in a pond."
     
@@ -332,15 +354,18 @@ label start:
     
     n "It's only in this train when she's within my grasp."
     
-    n "There's no time to think. No point in playing what might happen. I have to do it now or lose it forever."
+    n "There's no time to think. No point in playing what might happen. I had to do it now or lose it forever."
     
     nvl clear
     
-    n "So... I stand up, and approach her."
+    n "So... I stood up, and approached her."
     
     #approach alexis
     
-    # her sprite fades in
+    show alexis thinking with fade
+    
+    $ renpy.pause(1.5, hard=True)
+    
     
     nvl clear
     
@@ -348,9 +373,9 @@ label start:
     
     n "I never thought that color could exist."
     
-    n "...."
-    
     nvl clear
+    
+    show alexis surprised
     
     na "..."
     
@@ -365,6 +390,8 @@ label start:
     nvl clear
     
     na "Which stop are you getting off at!"
+    
+    show alexis worried
     
     a "..."
     
@@ -387,6 +414,8 @@ label start:
     n "There's nothing wrong with my body save my out of control beating heart."
         
     na "Do you have some Panadol? I'm not sure if - "
+    
+    show alexis surprised
     
     a "Oh yes! I have some right here. Is three tablets enough?"
     
@@ -413,6 +442,8 @@ label start:
     nvl clear
     
     na "Hey, what's that inside your bag?"
+    
+    show alexis worried
     
     a "This? It's just a book."
     
@@ -454,6 +485,8 @@ label start:
     
     na "Where did you learn all this?"
     
+    show alexis smiling
+    
     a "I'm happy you like it."
     
     a "My dad was a painter, so I just learned from him."
@@ -461,6 +494,8 @@ label start:
     na "This is seriously Picasso tier."
     
     na "You could earn millions from this!"
+    
+    show alexis surprised
     
     a "Nononono, no one would buy these!"
     
@@ -475,6 +510,8 @@ label start:
     nvl clear 
     #time passes
     
+    show alexis worried
+    
     a "Sorry, do you dislike them?"
     
     a "I make it a schedule to draw from real life reference every few weeks."
@@ -487,6 +524,8 @@ label start:
     
     na "Your first few drawings are the best ones, you should focus on those."
     
+    show alexis smiling
+    
     n "She looked at me as if she would a lighthouse in the middle of a stormy sea, and I inwardly cheered."
     
     n "And to think I made that piece of advice up on the spot!"
@@ -494,6 +533,9 @@ label start:
     nvl clear 
     
     #time passes
+    
+    show alexis smiling
+    
     a "...A concept artist would be really hard. Everyone wants to be one. Some people work for ten years before they finally get that position."
     
     na "A concept artist? You mean, like for a movie?"
@@ -502,7 +544,11 @@ label start:
     
     na "Ubisoft! Or Blizzard!"
     
+    show alexis worried
+    
     a "Those companies are competitive too! I won't get in."
+    
+    show alexis thinking
     
     a "Maybe in a small studio..."
     
@@ -510,17 +556,23 @@ label start:
     
     na "You should drop out of school and send your drawings to Ubisoft right now."
     
+    show alexis surprised
+    
     a "I told you, I won't get it!"
+    
+    show alexis determined
     
     a "I'm going to an art university after this."
     
-    na "You sure you're going to need it?"
+    na "You sure you're going to need it?" 
     
     a "Big companies require a university education!"
     
     na "Eh, degrees are overated."
     
     na "Did you know Steve Jobs dropped out of college?"
+    
+    show alexis surprised
     
     a "Oh, really?!" 
     
@@ -530,17 +582,23 @@ label start:
     
     na "You seriously don't know?"
     
+    show alexis worried
+    
     a "It sounds familiar, sorry..."
     
     na "He was the first man on the moon, how could you not know him?"
     
     a "First man on the moon - "
     
+    show alexis surprised
+    
     a "No wait, are you sure...?"
     
     na "I was kidding."
     
     na "Mark Zuckerburg was the guy who invented Facebook."
+    
+    show alexis smiling
     
     a "Oh, that guy!"
     
@@ -550,10 +608,12 @@ label start:
     
     na "Of what, dropping out?"
     
+    show alexis thinking
+    
     a "Yes. He said I wasn't smart enough."
     
     na "Anyone who carries around a sketchbook like that a freaking genius."
-    
+        
     a "What do you mean?"
     
     na "Well..."
@@ -561,6 +621,8 @@ label start:
     na "You sit down in the middle of everyone, and you can concentrate enough to sketch a full drawing..."
     
     na "I could never do it."
+    
+    show alexis smiling
     
     a "Anyone can learn to draw, if they practiced." 
     
@@ -571,6 +633,8 @@ label start:
     na "So...it's not a matter of whether I start drawing or not, in the end it won't matter, right?"
     
     a "I get what you mean."
+    
+    show alexis determined
     
     a "But art is like that."
     
@@ -584,13 +648,19 @@ label start:
     
     na "You know how I know?"
     
+    show alexis smiling
+    
     a "How?"
     
     na "Your eyes." 
     
     na "They're the eyes of a chosen one."
     
+    show alexis surprised
+    
     a "Chosen one?"
+    
+    show alexis smiling
     
     na "(She giggled at that one.)"
     
@@ -616,9 +686,15 @@ label start:
     
     na "I was born with this."
     
+    show alexis surprised
+    
+    a "Is that a comet?"
+    
     a "It's beautiful."
     
     na "You can touch it if you want."
+    
+    show alexis smiling
     
     na "(She giggled again.)"
     
@@ -658,6 +734,8 @@ label start:
     
     na "Alexis, let's make a video game together."
     
+    show alexis surprised
+    
     a "..."
     
     a "Wow."
@@ -674,13 +752,19 @@ label start:
     
     na "Together, I'm sure we can - "
     
+    nvl clear
+    
     # train screeches
     
     #screen goes dark
     
-    play sound "sound/crash.wav" fadeout
+    scene black
+    
+    play sound crash fadeout 1
     
     $ renpy.pause(7, hard=True)
+    
+    play sound wind loop fadein 1
     
     n "Panic."
     
@@ -701,6 +785,8 @@ label start:
     n "Standing up with my flayed skin dangling down, I could believe."
     
     n "That in this world, there was a Hell on Earth - "
+    
+    stop sound
     
     nvl clear
     
@@ -760,6 +846,8 @@ label start:
     
     na "Alexis, are you okay?"
     
+    show alexis thinking with fade
+    
     na "Are you hurt anywhere?"
     
     a "..."
@@ -775,6 +863,8 @@ label start:
     na "Well, there's point in standing around."
     
     na "Let's just have a seat and wait for them to arrive."
+    
+    show alexis determined
     
     a "..."
     
@@ -796,9 +886,13 @@ label start:
     
     na "Let's wait for help to arrive."
     
+    show alexis thinking
+    
     a "There should be an emergency exit at the end of the train."
     
     a "Let's head there."
+    
+    hide alexis with fade
     
     na "(Without warning, she brushed past me and started moving down the carriage.)"
     
@@ -838,7 +932,11 @@ label start:
     
     na "See, There's nothing to worry about."
     
+    show alexis thinking
+    
     a "..."
+    
+    show alexis determined
     
     a "Don't trust him."
     
@@ -850,7 +948,11 @@ label start:
     
     na "I don't get what you mean."
     
+    show alexis thinking
+    
     n "She ignored that question and continued to march forward."
+    
+    hide alexis with fade
     
     n "What was wrong with her?"
     
@@ -860,11 +962,15 @@ label start:
     
     n "We soon reached the door that divided this carriage from the next carriage."
     
+    show alexis determined
+    
     n "She stepped forward to pull it open."
     
     #shudder
     
     na "(The door opened a single centimeter before jerking to a stop.)"
+    
+    show alexis worried
     
     a "..."
     
@@ -882,9 +988,13 @@ label start:
     
     na "(It's the first time I've heard of this.)"
     
+    show alexis thinking
+    
     a "There should be a way to open it." 
     
     na "(Again, as if barely acknowledging my presence, she turn around and began examining the train.)"
+    
+    hide alexis with fade
     
     n "The air of the train was getting to me."
     
@@ -900,6 +1010,8 @@ label start:
     
     na "(And she didn't even bother to look around.)"
     
+    show alexis thinking
+    
     a "I'm looking for the fishing pole."
     
     na "What?"
@@ -913,6 +1025,20 @@ label start:
     n "What was the hurry, anyway?"
     
     n "She's just going off on her own..."
+    
+    n "For the first time, her purple expression sparked a new emotion in me."
+    
+    n "Anger."
+    
+    hide alexis with fade
+    
+    nvl clear
+    
+    n "..."
+    
+    n "I've been angry before."
+    
+    n "Just have to control it and calm down."
     
     n "..."
     
@@ -984,12 +1110,305 @@ label start:
     
     nvl clear 
     
+    n "I've read in the news before."
     
+    n "There's some terroist group lately...they've been threatening to bomb public places over the internet."
     
-   
+    n "No driver...train malfunction...what else could this be?"
     
+    n "And why the fuck did they have to pick me of all people?"
+    
+    n "There's four million people in this city and I have to be the only unlucky one!"
 
-        `
+    n "I'm a diligent student, I submit my homework most of the time, my parents are good people and I've always been nice to the people I meet..."
+    
+    n "Why only me?!"
+    
+    nvl clear
+    
+    n "The heat."
+    
+    n "It wraps around my face like a veil."
+    
+    n "I can't breathe."
+    
+    n "They shut the air conditioning off."
+    
+    n "The only oxygen flowing here is decades old."
+    
+    n "In the tunnel, untouched, alone, cut off from the sky above."
+    
+    nvl clear
+    
+    n "Unbelievable."
+    
+    n "Insane."
+    
+    n "And she just doesn't care."
+    
+    n "I'm dying in the middle of the underground and she doesn't give a shit!"
+
+    n "This was supposed to be my perfect day with her!"
+    
+    nvl clear
+    
+    n "Before I know it, I'm standing over her."
+    
+    n "She's bending over the seats, her back to me, searching for something underneath."
+    
+    n "My hand found her shoulder, squeezing it like a vice."
+    
+    n "Like an enemy's."
+    
+    nvl clear 
+    
+    n "I fully expected her to gasp."
+    
+    n "Or at least jerk back."
+    
+    n "At least, then, she would finally act human about the situation."
+    
+    n "But instead..."
+    
+    n "She regarded me, with that same cold, impassive gaze."
+    
+    nvl clear 
+    
+    show alexis determined with fade
+    
+    a "Don't get so excited."
+    
+    a "Were you always like this?"
+    
+    a "So jumpy?"
+    
+    na "You're not helping."
+    
+    na "Tell me exactly what's going on."
+    
+    a "I've been looking for a tool to help us open the door."
+
+    na "(She held up a long metal rod.)"
+    
+    na "(I looked past her and saw an opened metal panel.)"
+
+    na "(This must have been a storage compartment of this carriage. Inside was a few first aid kits and a few office appliances.)"
+    
+    na "(But how did she know it was going to be there?)"
+    
+    a "There's a few coins wedged in the bottom of the door."
+    
+    a "If I slide the rod in, I can - "
+    
+    # flash
+    
+    a "!"
+    
+    na "(What?)"
+    
+    na "(She was looking at something behind me.)"
+    
+    hide alexis with fade
+    
+    na "(Without warning she suddenly ran to the door - )"
+    
+    na "(No, she sprinted.)"
+    
+    na "(I looked in the direction she had been staring at, which was the train carriages towards the driver's cabin.)"
+    
+    n "The chaos of metal poles still remained undisturbed."
+    
+    n "The handles lay still and the seats empty."
+    
+    nvl clear
+    
+    n "..."
+    
+    nvl clear
+    
+    n "No, wait."
+    
+    n "Something was moving through the carriages."
+    
+    n "No, it was someone."
+    
+    n "It was a tiny line of black from where I was sitting, but it was definitely a figure around human height. Maybe even slightly taller."
+     
+    n "That must be...the driver, right?"
+    
+    n "Who else could it be?"
+    
+    nvl clear
+    
+    na "(*ping)"
+    
+    na "(I turned to see Alexis bent over, panting, leaning the metal rod on the ground.)"
+    
+    na "Alexis, help's here - "
+    
+    show alexis angry 
+    
+    a "Don't!"
+    
+    a "Don't look at him. It'll encourage him."
+    
+    na "Who is he?"
+    
+    na "(*ping)"
+    
+    na "(She stood up, having finally managed to kick the rod into an l-shape.)"
+    
+    na "(Without hesitation, she stuck it in the gap of the door and began to heave.)"
+    
+    na "(...Was it my imagination, or did her movements seem a little more frantic now?)"
+    
+    na "(Almost as if...)"
+    
+    na "(She was afraid.)"
+    
+    hide alexis with fade
+        
+    n "It was closer now."
+    
+    n "In fact, the thin black line was growing bigger with alarming speed."
+    
+    n "It wasn't just moving towards us, I realised."
+    
+    nvl clear 
+    
+    n "It was running." 
+    
+    nvl clear
+    
+    na "(I didn't know what to do.)"
+    
+    na "(Alexis was hammering away at the door, her grunts mingling with the screech of steel.)"
+    
+    na "(In one final bid to regain some sanity, I went to the intercom once more.)"
+    
+    na "(I kept my eyes on the approaching figure, even as I depressed the button.)"
+    
+    na "Hello?"
+        
+    i "*bzzt"
+    
+    na "(It was only three carriages away now.)"
+    
+    na "Excuse me."
+    
+    na "(A door burst open - now it was two.)"
+   
+    na "There's a dangerous man on board the train."
+    
+    na "Can you call the police?"
+    
+    na "(The man could have just been a panicked passenger wanting to seek help, it was true.)"
+    
+    na "(But take a closer look and you would notice how its feet shuffled forward perfectly along the guided floor lines.)"
+    
+    na "(How its head bumped smoothly against the hanging handles without slowing down.)"
+    
+    na "(This man was running in a line that was perfectly straight.)"
+    
+    na "(As if he knew exactly where to to go.)"
+    
+    # flashes?
+    
+    na "(Something about terrified me.)"
+    
+    # flashes
+    
+    na "And the worst part was..."
+    
+    na "The man had no face."
+    
+    na "I didn't know what was happening, but he had no face."
+    
+    i "*bzzt"
+    
+    na "(The intercom was breaking up.)"
+    
+    na "(Had the crash damaged some of its systems after all?)"
+    
+    i "...ac......."
+    
+    i "bla.....ki...."
+    
+    i "Hail.......black......"
+    
+    na "(Another door thrown aside.)"
+    
+    na "(Only one single carriage seperated us from him.)"
+    
+    i "Hail....la...King..."
+    
+    i "Hail...the Black King..."
+    
+    # more red flashes 
+
+    na "Agghh...."
+    
+    na "Fuck..."
+    
+    na "Fuck this shit..."
+    
+    n "Alexis was still struggling with the door."
+    
+    n "Her skinny frame with her skeleton arms, trying to swing back the rod like a five year old kid."
+    
+    n "As if she fully expected she would be strong enough to pry open to our freedom."
+        
+    nvl clear
+    
+    na "Give it to me, Alexis."
+    
+    n "She didn't hear me - "
+
+    n "No - she pretended not to hear me."
+    
+    n "I was sure."
+    
+    n "We were seconds away from what I was certain was the walking death, and she would rather ignore my entire existence that escape."
+    
+    n "I couldn't believe her absolute stupidity."
+    
+    nvl clear
+    
+    na "Give the rod to me."
+    
+    n "She swung it back instead, and it flew inches from my face."
+    
+    n "You can't be fucking serious."
+    
+    n "He's coming. He's already opening the last door."
+    
+    n "He's going to catch us."
+    
+    n "Stupid, stupid, fucking dumb, idiotic, brainless."
+    
+    n "It's because of this fucking girl."
+    
+    nvl clear
+    
+    n "I need to do some thing."
+    
+    n "It's hot, I'm sweating, it's dripping off my cheeks and he's coming."
+    
+    n "She's in my way."
+    
+    n "I need to - "
+    
+    nvl clear
+    
+    n "I need - "
+    
+    nvl clear
+    
+    menu: 
+    	"Slap her."
+    	
+    	"Barricade the door."
+    
     
     
     
