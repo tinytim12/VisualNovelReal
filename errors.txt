@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1132: expected statement.
-    *moves closer to her
-                        ^
+File "game/script.rpy", line 1440: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Barricade the door."
+                         ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Mon Oct 28 13:40:38 2019
+Mon Nov 11 22:37:10 2019

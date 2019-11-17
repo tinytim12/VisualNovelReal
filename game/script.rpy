@@ -7,6 +7,7 @@ define e = Character("Eileen")
 define n = nvl_narrator
 define na = Character("Zack")
 define a = Character("Alexis")
+define q = Character("???")
 
 define i = Character("Intercom")
 
@@ -31,6 +32,7 @@ image stationSide = "Bg/stationSidevers2.jpg"
 
 
 define flash = Fade(1, 1, 1, color="#fff")
+define redflash = Fade(1, 1, 1, color="#8a0303")
 
 
 # The game starts here.
@@ -366,7 +368,6 @@ label start:
     
     $ renpy.pause(1.5, hard=True)
     
-    
     nvl clear
     
     n "Her eyes..."
@@ -503,6 +504,8 @@ label start:
         
     na "And what are these?"
     
+    hide alexis with fade
+    
     n "A few pages on, the fantastical drawings ceased, and more mundane everyday sketches emerged."
     
     n "Most of them were random places around the city."
@@ -510,7 +513,15 @@ label start:
     nvl clear 
     #time passes
     
-    show alexis worried
+    #background 1
+    na "(*flip)"
+
+    #background 2 
+    
+    na "(*flip)"
+    
+    
+    show alexis worried with fade
     
     a "Sorry, do you dislike them?"
     
@@ -533,6 +544,23 @@ label start:
     nvl clear 
     
     #time passes
+    
+    hide alexis
+    
+    n "The train cruised on."
+    
+    nvl clear
+    
+    #background
+    
+    n "The windows flashed black, as we hurtled along the endless tunnel."
+    
+    #background
+    nvl clear
+    
+    n "The engine hummed around us, the melody reaching deep into my heart and rattling my bones."
+    
+    nvl clear
     
     show alexis smiling
     
@@ -1405,16 +1433,429 @@ label start:
     nvl clear
     
     menu: 
-    	"Slap her."
-    	
-    	"Barricade the door."
+    
+        "Slap her.":
+            $ evil = "true"
+        
+        "Barricade the door.":
+        
+            n "I don't know why on earth the thought of physically harming her came to my mind."
+            
+            n "The heat of the train, the fear of our approaching doom, it's all gotten to me."
+            
+            n "There's no point to throw a tantrum. I should look for something to barricade the door." 
+            
+            nvl clear
+            
+            n "My mind thinks all this, and my body moves on its own."
+            
+    n "It's almost mechanical."
+
+    n "A command is issued and my body carries it out."
+    
+    n "My hand swings back and slams into her face."
+    
+    nvl clear
+    
+    show alexis thinking
+    
+    n "And you know the best part?"
+    
+    n "She doesn't say a word."
+    
+    a "..."
+    
+    show alexis determined
+    
+    a "The same track..."
+    
+    na "(She mumbles something.)"
+    
+    a "It always travels on the same line."
+    
+    #switch view to approaching figure
+    
+    hide alexis
+    
+    na "(The final barrier protecting us slides open.)"
+    
+    na "(The smell of decay fills the carriage.)"
+    
+    na "(And the man with no face finally comes to claim us.)"
+    
+    show alexis thinking
+    
+    na "(Alexis has completely disappeared into another world.)"
+    
+    na "(Her iron rod lies at her side, and she stares our doom straight in the face.)"
+    
+    na "(Almost as if accepting it.)"
+    
+    hide alexis
+    
+    n "And me?"
+    
+    nvl clear
+    
+    n "Right now, I'm filled with a feral rage I can't even begin to understand."
+    
+    n "If nothing in front of me was clear..."
+    
+    n "If everything I knew was dumped aside..."
+    
+    n "If I was just going to be dragged along the rails with my face against the ground..."
+    
+    n "Pulled along by winds and storms without an inkling of what was real and what was a fuckful of dreams..."
+    
+    nvl clear
+   
+    n "Then, I'd just smash everything again and again until the picture made sense."
+
+    nvl clear
+
+    na "(I grabbed the rod out of Alexis's hands.)"
+    
+    q "You..."
+    
+    q "You are the Black King..."
+    
+    n "And that was when I smacked that fuckhead right in his skull."
+    
+    nvl clear
+    
+    q "Gggglll!"
+        
+    na "(I stuck the rod in the crack of the door, and gave it one final pull.)"
+    
+    na "(The coin trapped in there shot out and bounced off the seats, landing near the foot of the groaning man on the floor.)"
+    
+    show alexis surprised
+    
+    na "(I threw the rod onto the floor, close enough to Alexis to make her jump.)"
+    
+    na "Let's fuck off."
+    
+    n "Like a bird with its wings newly freed..."
+    
+    n "I zoom into the next carriage, panting like a mad dog."
+    
+    n "It's a while before I realise Alexis isn't following me."
+    
+    nvl clear
+    
+    n "She stood framed in the doorway, her arms hanging by her sides."
+    
+    n "Before she had been passive, now, she just looked lost."
+    
+    n "The man behind her was still trying to get to his feet, but could rise up any moment."
+    
+    n "And yet, she stayed there, just staring at me."
+    
+    nvl clear
+    
+    na "What the fuck are you doing?"
+    
+    show alexis surprised
+    
+    $ renpy.pause(1, hard=True)
+    
+    show alexis worried
+    
+    $ renpy.pause(1, hard=True)
+    
+    show alexis sad
+    
+    $ renpy.pause(1, hard=True)
+    
+    na "(For a moment I forgot everything - the darkness, the heat, the howls of our pursuer.)"
+    
+    na "(All that was there was the look on her face.)"
+    
+    na "(Watery eyes that must have been at least a hundred years old.)"
+    
+    a "Zack..."
+    
+    a "Zack, I'm coming with you!!!"
+    
+    nvl clear
+    
+    n "She practically leapt to join me, and together we raced down the carriage."
+    
+    n "The emergency exit at the back was easy enough to open, and we spilled out into the dark tunnel."
+    
+    n "Ahead, the path was shrouded in darkness, a straight line leading into infinity."
+    
+    n "Still, we ran."
+    
+    n "Away from the safety of the train, straight towards the belly of the beast."
+    
+    nvl clear
+    
+    n "Our breaths came out ragged and our legs intertwined."
+    
+    n "At one point, our hands had touched and now we grasped one another like a lifeline." 
+    
+    n "We didn't look back, we didn't stop, we just ran."
+    
+    n "All that mattered was that we were moving."
+    
+    nvl clear
+      
+    n "Only when the train was swallowed up completely by the trailing darkness, did we slow to a jog."
+    
+    nvl clear
+    
+    na "Alexis..."
+    
+    na "Does it..."
+    
+    na "Does it hurt?"
+    
+    show alexis smiling
+    
+    a "Does what hurt?"
+    
+    na "Your cheek..."
+    
+    na "I'm sorry...that I hit you..."
+    
+    show alexis thinking
+    
+    a "..."
+    
+    show alexis surprised
+    
+    a "What do you mean?"
+    
+    na "Huh?"
+    
+    a "And..."
+    
+    a "Um..."
+    
+    show alexis worried
+    
+    a "Sorry, I'm just very confused now."
+    
+    a "This might sound weird, but..."
+    
+    a "Why are we running again?"
+    
+    na "What?"
+    
+    a "I must have hit my head..."
+    
+    a "Something happened, right?"
+    
+    a "The last thing I remember was the train crashing."
+    
+    na "Are you for real?!"
+    
+    na "So... you don't remember anything?"
+    
+    na "About the train?"
+    
+    na "The door?"
+    
+    na "And the man with no face?"
+    
+    a "Man with no face?"
+    
+    a "Sorry, but I don't know what you mean by that."
+
+    a "But I seem to remember something..."
+    
+    a "About getting to the exit."
+    
+    na "Okay..."
+    
+    na "You're not going to believe this."
+    
+    na "But first, let me check your head."
+    
+    show alexis smiling
+    
+    a "Alright."
+    
+    n "For an amnesiac, she seemed to have accepted this rather easily, which didn't improve the oddity of the situation, but I didn't care."
+    
+    n "Alexis was back, and once more I was her guardian."
+    
+    n "Using the flashlight from my phone, we both crouched down in the middle of the tracks, and I inspected the back of her head for damage."
+    
+    nvl clear
+    
+    na "Sorry, I'm going to brush your hair away now."
+    
+    a "It's okay. Tell me if it's bad."
+    
+    n "Her silky brown hair was soft to the touch, and I dared to use only my fingertips to peel away the strands to inspect her skull."
+    
+    n "No signs of blood or even dirt on her pristine scalp."
+    
+    n "I wasn't expecting any, because I hadn't seen her hit her head at all back there."
+    
+    n "So, what then, had caused this sudden bout of amnesia?"
+    
+    hide alexis
+    
+    nvl clear
+    
+    n "This quiet, sweet girl with whom I had showed my birthmark to..."
+    
+    n "She ended up to be someone who was hiding many secrets."
+    
+    n "What was up with that sudden change of personality, after the train crash?"
+    
+    n "Why had she known so much about the situation?"
+    
+    n "Heck, she even knew that there was a coin stuck in the door? How does someone even deduce that without even a few minutes of inspection?"
+    
+    nvl clear
+    
+    n "And above all..."
+    
+    n "Why had she treated me like a piece of living garbage?"
+    
+    n "Staring at the back of her skull now, I wondered what would be like I could peel apart the layers, reach in and grab all the answers floating around in her mind."
+    
+    nvl clear
+    
+    n "I remembered how I had drew back my hand..."
+    
+    n "And almost broke her face in two."
+    
+    n "All for the sake of gaining those very answers."
+    
+    n "What the hell had I been thinking, then?"
+    
+    nvl clear
+    
+    n "I've actually been no stranger to these periods of rage."
+    
+    n "My moods swung up and down. I could be flying on cloud nine one day, and all would it take would be one bad event to send me crashing down."
+    
+    n "My poor test results, someone talking smack about me, or even the bus being late..."
+    
+    n "I would pace up and down frantically to avoid my anxiety from lashing out."
+    
+    n "But this was the first time it finally did."
+    
+    n "And onto someone I cared, about no less."
+    
+    nvl clear
+    
+    n "I had no excuse."
+    
+    n "It was an undeserved miracle that she didn't remember."
+    
+    n "Whatever. The past was the past."
+    
+    n "I swore, strapped over a lock on my heart, repeated a mantra to never, ever let my emotions get the better of me again."
+    
+    show alexis worried
+    
+    a "Zack? Is it that bad?"
+    
+    na "Ah, no, sorry."
+    
+    na "Looks like it's all in the clear."
+    
+    na "(Just as normalcy was returning, a footstep thudded in the darkness)."
+    
+    na "(A faint, soft sound, far away behind us)."
+    
+    na "(But it was a footstep all the same)."
+    
+    na "(Our pursuer wasn't giving up)."
+    
+    na "Shit, shit, shit..."
+    
+    a "Should we go?"
+    
+    a "Towards the exit?"
+    
+    na "Yeah."
+    
+    na "Let's move fast."
+    
+    na "Hold on to my hand and don't let go."
+    
+    n "We followed the tracks with our legs, the light from my phone pointing the way."
+    
+    n "I didn't hear any more footsteps, but I'm didn't want to take any chances, and so although we weren't running anymore, we moved at a brisk pace."
+    
+    n "I could have shone the light behind us to check how far he was, but I was afraid of what I would see."
+    
+    n "As a result of this wilful ignorance, calm returned to me."
+    
+    n "Walking like this, feeling her bounce beside me with every step, was calming in a way."
+    
+    n "Since everything around us was a blank darkness, I could imagine we were transversing under the night sky, and the brief blinking lights around were simply tiny stars."
+    
+    nvl clear
+    
+    n "Along the way, I updated her on what had happened."
+    
+    n "About the train crash, the man on the intercom, and the shadow who was currently on our tail."
+    
+    n "I omitted all mention of her strange behaviour, though."
+    
+    n "I didn't want to frighten her."
+    
+    n "Instead, of course, I gave her the juicy details on how I had saved her from our aggressor."
+    
+    nvl clear
+    
+    show alexis surprised
+    
+    a "So you broke his bones?"
+    
+    a "You sure?"
+    
+    na "I felt it."
+    
+    na "And I heard the crack as well!"
+    
+    na "Guy flew so far I thought he was on his way out the window."
+    
+    show alexis smiling
+    
+    a "I'm pretty sure you're exaggerating."
+    
+    na "Well, I wouldn't know, it happened all so fast."
+    
+    a "How convenient that I don't remember any of it."
+    
+    na "You're in a good mood, for someone trapped in a terrorist attack."
+    
+    show alexis surprised
+    
+    a "You think the person who's after us is a terrorist?"
+    
+    na "Probably. The person on the intercom and the person who chased us - I think they're the same person, actually -"
+    
+    na "Anyway, they both said the same two words."
+    
+    na "Black King."
+    
+    na "I remember seeing those words on the television recently."
+    
+    na "Can't exactly recall, but it was something to do with a terrorist group."
+    
+    show alexis determined
+    
+    a "The Blackhats."
+    
+    na "Blackhats?"
+    
+    na "Yeah, that's what they called them."
+    
+    a "And the Black King was their leader, right?"
     
     
     
-    
-    
-    
-    
+   
     
     
    
