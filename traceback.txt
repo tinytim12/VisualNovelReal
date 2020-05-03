@@ -1,24 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 333, in script
-    n "...The train's empty."
-  File "renpy/common/00nvl_mode.rpy", line 380, in do_display
-    **display_args)
-IOError: Couldn't find file 'sound/ambientTrain.wav'.
+While processing text tag {cps = *0.7} in u'{cps = *0.7} The train...is experiencing...a momentary delay. {/cps}'.:
+  File "game/script.rpy", line 963, in script
+    i "{cps = *0.7} The train...is experiencing...a momentary delay.  {/cps}"
+Exception: Unknown text tag u'cps = *0.7'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 333, in script
-    n "...The train's empty."
+  File "game/script.rpy", line 963, in script
+    i "{cps = *0.7} The train...is experiencing...a momentary delay.  {/cps}"
   File "D:\Downloads\renpy-7.3.2-sdk\renpy\ast.py", line 706, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "D:\Downloads\renpy-7.3.2-sdk\renpy\exports.py", line 1336, in say
     who(what, *args, **kwargs)
   File "D:\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 1139, in __call__
     self.do_display(who, what, cb_args=self.cb_args, **display_args)
-  File "renpy/common/00nvl_mode.rpy", line 380, in do_display
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 842, in do_display
     **display_args)
   File "D:\Downloads\renpy-7.3.2-sdk\renpy\character.py", line 591, in display_say
     rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
@@ -26,23 +24,49 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\core.py", line 2699, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\core.py", line 3377, in interact_core
-    renpy.audio.audio.periodic()
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\audio\audio.py", line 1023, in periodic
-    six.reraise(exc[0], exc[1], exc[2])
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\audio\audio.py", line 1001, in periodic_thread_main
-    periodic_pass()
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\audio\audio.py", line 942, in periodic_pass
-    c.periodic()
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\audio\audio.py", line 420, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\audio\audio.py", line 72, in load
-    rv = renpy.loader.load(fn)
-  File "D:\Downloads\renpy-7.3.2-sdk\renpy\loader.py", line 576, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'sound/ambientTrain.wav'.
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\core.py", line 3191, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\core.py", line 2091, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 546, in renpy.display.render.render_screen
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\screen.py", line 675, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\layout.py", line 1127, in render
+    st, at)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\display\layout.py", line 722, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 154, in renpy.display.render.render
+  File "render.pyx", line 247, in renpy.display.render.render
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\text\text.py", line 1989, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\text\text.py", line 590, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "D:\Downloads\renpy-7.3.2-sdk\renpy\text\text.py", line 1172, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag u'cps = *0.7'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
 VisualNovel 1.0
-Mon Nov 11 22:46:21 2019
+Sat May 02 16:43:52 2020

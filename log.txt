@@ -1,4 +1,4 @@
-Mon Nov 11 23:04:28 2019
+Sat May 02 16:44:12 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.2.320
  
@@ -6,30 +6,31 @@ Ren'Py 7.3.2.320
 Bootstrap to the start of init.init took 0.06s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.02s
-Loading script took 0.11s
+Loading error handling took 0.03s
+Loading script took 0.48s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.08s
-Loading analysis data took 0.02s
+Running init code took 0.07s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Timothy Yeo\\AppData\\Roaming/RenPy/backups\\VisualNovelReal':
 Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.02s
+Initial gc. took 0.01s
 DPI scale factor: 1.250000
-Creating interface object took 0.04s
+Creating interface object took 0.05s
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.07s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.07s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.07s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.02s
@@ -40,7 +41,7 @@ Windowed mode.
 Screen sizes: virtual=(1280, 720) physical=(1733, 975) drawable=(1733, 975)
 Vendor: 'Intel'
 Renderer: 'Intel(R) HD Graphics 630'
-Version: '4.5.0 - Build 25.20.100.6373'
+Version: '4.6.0 - Build 26.20.100.7263'
 Display Info: <Info({'blit_sw_CC': False, 'refresh_rate': 60, 'bitsize': 32, 'wm': True, 'losses': (0, 0, 0, 8), 'hw': False, 'masks': (16711680L, 65280L, 255L, 0L), 'current_h': 1080, 'current_w': 1920, 'shifts': (16, 8, 0, 0), 'blit_sw_A': False, 'blit_hw': False, 'blit_sw': False, 'bytesize': 4, 'blit_hw_CC': False, 'blit_hw_A': False, 'video_mem': 268435456})>
 Fixed-function is blacklisted.
 Extensions:
@@ -95,6 +96,7 @@ Extensions:
     GL_ARB_geometry_shader4
     GL_ARB_get_program_binary
     GL_ARB_get_texture_sub_image
+    GL_ARB_gl_spirv
     GL_ARB_gpu_shader5
     GL_ARB_gpu_shader_fp64
     GL_ARB_half_float_pixel
@@ -112,6 +114,7 @@ Extensions:
     GL_ARB_multitexture
     GL_ARB_occlusion_query
     GL_ARB_occlusion_query2
+    GL_ARB_pipeline_statistics_query
     GL_ARB_pixel_buffer_object
     GL_ARB_point_parameters
     GL_ARB_point_sprite
@@ -145,6 +148,7 @@ Extensions:
     GL_ARB_shading_language_420pack
     GL_ARB_shading_language_packing
     GL_ARB_shadow
+    GL_ARB_spirv_extensions
     GL_ARB_stencil_texturing
     GL_ARB_sync
     GL_ARB_tessellation_shader
@@ -162,6 +166,7 @@ Extensions:
     GL_ARB_texture_env_combine
     GL_ARB_texture_env_crossbar
     GL_ARB_texture_env_dot3
+    GL_ARB_texture_filter_anisotropic
     GL_ARB_texture_float
     GL_ARB_texture_gather
     GL_ARB_texture_mirror_clamp_to_edge
@@ -182,6 +187,7 @@ Extensions:
     GL_ARB_transform_feedback2
     GL_ARB_transform_feedback3
     GL_ARB_transform_feedback_instanced
+    GL_ARB_transform_feedback_overflow_query
     GL_ARB_transpose_matrix
     GL_ARB_uniform_buffer_object
     GL_ARB_vertex_array_bgra
@@ -257,6 +263,7 @@ Extensions:
     GL_KHR_blend_equation_advanced_coherent
     GL_KHR_context_flush_control
     GL_KHR_debug
+    GL_KHR_no_error
     GL_KHR_texture_compression_astc_hdr
     GL_KHR_texture_compression_astc_ldr
     GL_NV_blend_square
@@ -285,11 +292,34 @@ Texture testing:
 - 2048px textures work.
 FBO Maximum Texture Size: 16384
 Root FBO is: 0
-Total time until interface ready: 1.32399988174s
+Total time until interface ready: 1.59200000763s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.017667 seconds.
-- Frame drawn at 0.031667 seconds.
-- Frame drawn at 0.078667 seconds.
-- Frame drawn at 0.138667 seconds.
-- 0.138667 seconds to render 5 frames.
+- Frame drawn at 0.016000 seconds.
+- Frame drawn at 0.030000 seconds.
+- Frame drawn at 0.046000 seconds.
+- Frame drawn at 0.091000 seconds.
+- 0.091000 seconds to render 5 frames.
+The window was minimized.
+The window was restored.
+
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Screen sizes: virtual=(1280, 720) physical=(1733, 975) drawable=(1733, 975)
+FBO Maximum Texture Size: 16384
+Root FBO is: 0
+The window was minimized.
+The window was restored.
+
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Screen sizes: virtual=(1280, 720) physical=(1733, 975) drawable=(1733, 975)
+FBO Maximum Texture Size: 16384
+Root FBO is: 0
+
+primary display bounds: (0, 0, 1920, 1080)
+swap interval: 1 frames
+Windowed mode.
+Scre

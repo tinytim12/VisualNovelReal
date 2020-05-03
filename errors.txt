@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1440: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Barricade the door."
-                         ^
+File "game/script.rpy", line 804: indentation mismatch.
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Mon Nov 11 22:37:10 2019
+Sat May 02 16:28:48 2020
