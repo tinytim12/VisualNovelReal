@@ -13,8 +13,14 @@ define p = Character("Police")
 define i = Character("Intercom")
 
 define crash = "sound/crash.wav"
-define ambientTrain = "sound/ambientTrain.wav"
+define footstepsGraveLoop = "sound/footstepsGraveLoop.mp3"
+define footsteps = "sound/footsteps.wav"
+define thud = "sound/thud.wav"
 define doorCloseTrain = "sound/doorCloseTrain.wav"
+define pageTurn = "sound/pageTurn.wav"
+define static = "sound/static.wav"
+
+define ambientTrain = "sound/ambientTrain.wav"
 define wind = "sound/wind.wav"
 define stopTrain = "sound/stopTrain.wav"
 define ambientStation = "sound/ambientStation.wav"
@@ -27,11 +33,12 @@ image alexis smiling = "Alexis/alexis_smiling.png"
 image alexis thinking = "Alexis/alexis_thinking.png"
 image alexis worried = "Alexis/alexis_worried.png"
 
-
-image stationSide = "Bg/stationSidevers2.jpg"
-image trainSide = "Bg/trainside.jpg"
-image trainMiddle = "Bg/trainmiddle.jpg"
-
+image stationSide = "Bg/stationSide.jpg"
+image trainSide = "Bg/trainSide.jpg"
+image trainSideDreamy = "Bg/trainSideDreamy.jpg"
+image trainSideHorror = "Bg/trainSideHorror.jpg"
+image trainMiddle = "Bg/trainMiddle.jpg"
+image tunnel = "Bg/tunnel.jpg"
 
 define flash = Fade(1, 1, 1, color="#fff")
 define redFlash = Fade(0.25, 0.25, 0.25, color="#8a0303")
@@ -122,12 +129,6 @@ label start:
     
     n "Already, it's organs are failing."
     
-    n "It's dark."
-    
-    n "It's hot."
-    
-    n "It's cramped."
-    
     n "The occupants have long since descended into madness."
     
     n "My tongue comes out dry and my head like brass."
@@ -137,8 +138,6 @@ label start:
     n "Behind me, a man succumbs."
     
     n "His limbs distort and he convulses to the ground."
-    
-    n "Foam gushes out of his mouth and he kicks his legs like a dying spider."
 
     n "In front of me, the rest are trying to get the door open."
     
@@ -172,7 +171,7 @@ label start:
     
     n "My legs turn, and they shuffle, and instead of fleeing I approach the carnage."
     
-    n "The darkness begins to lift and I start to make out her dress.  "
+    n "The darkness begins to lift and I start to make out her dress."
     
     nvl clear
     
