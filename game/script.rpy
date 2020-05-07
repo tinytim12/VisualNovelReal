@@ -19,6 +19,8 @@ define thud = "sound/thud.wav"
 define doorCloseTrain = "sound/doorCloseTrain.wav"
 define pageTurn = "sound/pageTurn.wav"
 define static = "sound/static.wav"
+define trainComing "sound/trainComing.wav"
+define beep = "sound/beep.wav"
 
 define ambientTrain = "sound/ambientTrain.wav"
 define wind = "sound/wind.wav"
@@ -39,11 +41,16 @@ image trainSideDreamy = "Bg/trainSideDreamy.jpg"
 image trainSideHorror = "Bg/trainSideHorror.jpg"
 image trainMiddle = "Bg/trainMiddle.jpg"
 image tunnel = "Bg/tunnel.jpg"
+image trainDoor ="Bg/trainDoor.jpg"
+image trainGantry ="Bg/trainGantry.jpg"
+image vending ="Bg/vending.jpg"
+image detention ="Bg/detention.jpg"
+image office ="Bg/office.jpg"
 
 define flash = Fade(1, 1, 1, color="#fff")
 define redFlash = Fade(0.25, 0.25, 0.25, color="#8a0303")
+define quickFlash = Fade(1, 1, 1, color="#fff")
 image black = "#000"
-
 
 # The game starts here.
 
@@ -52,34 +59,40 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-    
-    show alexis surprised
-    
-    na "This is a test."
         
     scene black 
     
     play sound wind loop fadein 1
     
-    n "When trains are born, they have one function." 
+    n "It is not in the nature of trains to rebel." 
     
-    n "{vspace=50}They move from point A to point B."
+    ncl clear
+    
+    n "{vspace=50}After all, they are just machines."
+    
+    n "{vspace=50}Programmed to bring you from point A to point B."
     
     nvl clear
     
-    n "{vspace=15}When millions of dollars construct one ten-carriage unit, there is one purpose."
+    n "{vspace=15}Could you imagine what would happen to our city if they strayed off the rails?"
 
-    n "{vspace=15}They travel from point A to point B."
+    n "{vspace=15}If the levers controlling its engine no longer worked?"
     
-    n "{vspace=15}When placed on the rails and their wheels locked in, there is only one home for them."
+    n "{vspace=15}Could you even think what would happen if they clambered out into the platform and out into the streets?"
     
-    n "{vspace=15}The road that lies from point A to point B."
+    nvl clear 
+    
+    n "{vspace=15}Never mind the property damage."
+    
+    n "{vspace=15}People would no longer be able to go where they needed to go."
+    
+    n "{vspace=15}Boxed in their carriages, floating in a singular point in space."
+    
+    n "{vspace=15}Eyes searching desperately for the road ahead."
     
     nvl clear
     
-    n "If a train were to rebel, it would be impossible."
-    
-    n "{vspace=15}There are laws in place."
+    n "{vspace=15}That's why there are laws in place."
     
     n "{vspace=15}The train can only move forward."
     
@@ -91,57 +104,43 @@ label start:
     
     nvl clear
     
-    n "This is the existence of a train."
-    
-    n "{vspace=50}Point A. Point B."
-    
-    nvl clear
-    
     #slow fade out
     
-    n "A train cannot think, so it cannot feel the horror of this arrangement."
+    n "{vspace=50}This is the fundamental truth of our society."
     
-    n "{vspace=20}But if it did, I'm sure it would be screaming."
+    n "{vspace=50}Without trains, humanity would cease to exist."
     
-    n "{vspace=20}I'm sure it would fly off the tracks and crash through the tunnel."
-    
-    n "{vspace=20}Perhaps it would burst into the surface and face the blue sky."
+    n "{vspace=50}And yet, we still plant explosives on the tracks."
     
     nvl clear
-    
-    n "Could it?"
-    
-    n "{vspace=20}There are laws in place, after all."
-    
-    nvl clear
-    
-    #slow fade out
-    
-    n "{vspace=50}But laws are made to be broken."
+   
+    n "{vspace=50}This is the result."
     
     nvl clear
     
     #scene of the devestation
     
-    n "This is the carcass of a rebel."
+    scene trainSideHorror with fade
+    
+    n "I am inside the carcass of a rebel."
     
     n "A once proud warrior stripped bare."
     
     n "Already, it's organs are failing."
     
     n "The occupants have long since descended into madness."
-    
-    n "My tongue comes out dry and my head like brass."
-    
+        
     nvl clear
-    
+   
+    n "My tongue comes out dry and my head like brass."
+ 
     n "Behind me, a man succumbs."
     
     n "His limbs distort and he convulses to the ground."
 
     n "In front of me, the rest are trying to get the door open."
     
-    n "Their hands pull until their fingers turn red, but the train fails them."
+    n "Their hands pull until their fingers split, but the train denies them."
     
     n "A foot crushes my collarbone as someone throws himself against the windows."
     
@@ -191,131 +190,179 @@ label start:
     
     nvl clear
     
-    scene stationSide with flash
+    scene stationGantry with flash
     #change scene 
     
-    play sound ambientStation
+    play music loFi fadeout 1.0 fadein 1.0 loop
     
-    #Now we are in a brightly lit station
+    $ renpy.pause(2, hard=True)
     
-    n "Okay, maybe I gotta introduce myself first."
+    scene stationSide with dissolve
     
-    n "My name is Zack, and I've just seventeen years old, halfway through high school." 
+    $ renpy.pause(2, hard=True)
     
-    n "Everyday I leave my house at eight o clock, catch the morning train and arrive only slightly late."
+    scene vending with dissolve
     
-    n "My main subjects are Maths, Chemistry, and Physics."
+    $ renpy.pause(1, hard=True)
     
-    n "I listen to lectures for eight hours before I'm finally let off."
+    n "Alright, what will it be today?"
+    
+    n "That's the thing about the vending machine."
+    
+    n "It's cursed."
+    
+    n "Well, cursed only to me. Darren tried it the other day and it worked fine for him."
+    
+    n "But no matter how many time I push the button, I always end up with avocado flavour."
     
     nvl clear
     
-    n "Sounds boring, doesn't it?"
+    n "Avocado of all things was never meant to exist on a candy!"
     
-    n "I'm sure if someone were to read a script of my life, he would fall asleep of boredom before the very end."
+    n "There are like, five, six other flavours with are much better."
     
-    n "But don't worry! The story's about to get interesting."
+    n "Problem is, this vending machine has a gimmick."
     
-    n "I'm not going to be an ordinary high school student for the rest of my life! "
+    n "There's only one button for selection. That's because the flavour of the candy it gives you is entirely random."
     
-    n "Unlike my classmates, I'm always looking for interesting things to do. I'm not scared of treading off the beaten path."
+    nvl clear
+    
+    n "So one out of six times, you'd be stuck with the avocado."
+    
+    n "I've tried at least twelve times and it always spits out the worse one."
+    
+    n "As if it's been programmed to taunt me."
+    
+    n "Which is ridiculous, because no vending machine could be sentient enough to enact a personal vendetta."
+    
+    n "Not as if I treated it badly or anything."
+    
+    n "I've always stroked the buttons with the utmost care."
+    
+    na "Alright..."
+    
+    na "Luck number thirteen, here we go..."
+    
+    na "..."
+    
+    na "(Maybe if I try a different technique, it won't give me the avocado again.)"
+    
+     menu: 
+    
+        "Just press the button normally":
+        
+        "Press the button three times within one second!":
+        
+        	na "(Come on, that's ridiculous!)"
+        	
+        	na "(As if that would do anything.)"
+        	
+        "Kick it in the stomach!":
+        
+        	na "(Come on, I'm not going to hurt it!)"
+        	
+        	na "(Plus, if the station staff sees me do that, I'm bound to get arrested.)"
+    
+    na "(In the end, the old ways are the best.)"
+    
+    play sound beep
+    
+    play sound thud
+    
+    na "..."
+    
+    n "Avocado..."
+    
+    nvl clear
+    
+    q "Do you want to swap?" 
+    
+    n "...?"
+    
+    n "Someone noticed what I was doing?"
+    
+    nvl clear
+    
+    show alexis worried with fade
+    
+    n "It's a girl."
+    
+    n "Hey, I've seen her around before. She's one of the back row seaters in my Ethics class."
+    
+    n "The one with purple eyes."
+    
+    nvl clear
+    
+    na "Um..."
+    
+    na "Hi...?"
+    
+    show alexis surprised
+    
+    a "Oh! I'm sorry."
+    
+    a "But if you like Orange..."
+    
+    a "I don't mind swapping it for Avocado."
+    
+    na "(She unfurled her hand to reveal the orange counterpart of the candy I had received.)"
+    
+    na "(So...she wanted to swap candies?)"
+    
+    na "(What..?)"
+    
+    na "S-sure..."
+    
+    na "Here you go."
+    
+    show alexis worried 
+    
+    a "Thanks."
+    
+    a "Well..."
+    
+    a "See you in class."
+    
+    na "Yeah..."
+    
+    hide alexis
+    
+    na "...."
+    
+    n "What the hell did I just do?"
+    
+    n "They never taught you to talk to girls in school!"
+    
+    n "And it was the one with purple eyes, as well!" 
+    
+    n "What could have said to her anyway?"
 
-    n "The other day, I stole a pencil from my teacher's desk when he wasn't looking."
-
-    n "Okay, maybe that sounds a little lame. But I'm trying."
+    n "Not as if I could quiz her on her top five favourite foods right off the bat!"
+    
+    n "What a missed chance..."
     
     nvl clear
     
-    n "But today, any viewers tuning in are in for a treat."
+    scene stationSide with dissolve
     
-    n "No joke, right now, my heart's pumping like crazy and I can't stop squeezing my fingers."
+    n "This must be some sort of cruel fate."
     
-    n "Because, just two meters away from me, sitting on the next bench over, is her."
+    n "She's waiting at the platform."
     
-    n "Staring at something in the distance, past the barriers and through the apartment buildings that surround the station."
-    
-    n "Most people, when waiting for the train, would just keep their head down and stare into their phone, no?"
-    
-    n "But she's always like this, when she's resting. Just examining something that the rest of us can't fathom to see."
+    n "Don't tell me she's taking the same train as me."
     
     nvl clear
     
-    n "Okay, I probably sound like a stalker, but hear me out."
+    n "Would it be weird if I went up and tried to talk to her again?"
     
-    n "It's not like I tracked her every move - but in a fancy school like mine, where everyone followed each other and no one stepped out of line..."
+    n "Yes, it would most definitely be."
     
-    n "It was impossible for her not to stand out."
+    n "But destiny has already handed me a chance on a silver platter!"
     
-    n "Most people moved around in groups, blending in with their banter and smiles, swinging their arms and telling jokes, always knee deep in the swing of things."
+    n "I have no choice but to take it.
     
-    n "But her? She wasn't concerned with anything like that."
-    
-    n "Her childish dress style, for one, stuck out like a sore thumb."
-    
-    n "Often, you could see her sitting alone at the cafeteria, sipping from a modest fruit juice packet, simply observing the world around her."
-    
-    n "Other times, she would carry this huge notebook around with her, and would spend a whole half hour in the same spot with her head bent down, scribbling something down for only her to see."
-    
-    nvl clear
-    
-    n "What was in that sketchbook?"
-    
-    n "That was one of the many questions I found swimming in my head when I caught sight of her."
-    
-    n "But most importantly, I wanted to know how she did it."
-    
-    n "How she managed to detach herself from the flow, and still remain calm about herself."
-    
-    n "The flow was a strange thing. When I started high school, I was swept up before I even realized it."
-    
-    n "Laughing at lame jokes, patting shoulders of people I didn't like."
-    
-    n "I even forced myself to learn soccer, just because all the other strong looking boys played."
-    
-    nvl clear
-    
-    n "But her? She had it all figured out, you could tell."
-    
-    n "I wanted to know her secret."
-    
-    n "In fact, I wanted to know everything about her."
-    
-    n "Now that I think about it, this is pretty much a confession of my feelings."
-    
-    n "Yeah, there's not denying it."
-    
-    n "I've fallen in love with her."
-    
-    nvl clear
-    
-    n "But, how do you even talk to girls?"
-    
-    n "That's something they never teach you in school."
-    
-    n "I know her, but I'm not sure if she knows me."
-    
-    n "If a random stranger suddenly comes up and tries to talk to you, wouldn't be weird as hell?"
-    
-    n "If it were me, and I was a girl...yeah, pretty sure I would be running for the nearest exit."
-    
-    nvl clear
-    
-    n "Okay. So what I need is some sort of excuse."
-    
-    n "..."
-    
-    n "Maybe I could drop my pen near me and pretend that it's hers..."
-    
-    n "..."
-    
-    n "Then how do I continue the conversation from there?!"
-    
-    n "I don't even know her name!"
-    
-    #*train comes*
-    
-    play sound stopTrain fadein 1.0
-    
+    play sound trainComing fadein 1.0 fadeout 1.0
+        
     n "Damn the train's coming!"
     
     n "I don't know which station she gets off."
@@ -330,7 +377,7 @@ label start:
     
     stop sound
     
-    show trainside
+    show trainSideDreamy with fade
     
     play sound ambientTrain loop fadein 1.0
     
@@ -340,59 +387,53 @@ label start:
     
     n "That means, of course, that I have to stand far away from her so I don't look weird."
     
-    n "I was close to her when we entered the train, together, though."
+    n "Did she notice me come in? Is she freaked out?"
     
-    n "...she smelled nice."
+    n "As far as I can see, she's still staring out the window."
     
     nvl clear
     
     n "This is driving me crazy."
     
-    n "The next station's only three minutes, and she might get off!."
+    n "The next station's only three minutes, and she might get off!"
     
-    n "This is the only chance I have."
-    
-    n "Her existence was like a dandelion in the wind - no, that's not entirely accurate."
-    
-    n "She's more like a lily in a pond."
-    
-    n "Always visible in the distance, but out of reach."
-    
-    n "It's only in this train when she's within my grasp."
-    
-    n "There's no time to think. No point in playing what might happen. I had to do it now or lose it forever."
+    n "Here we go..."
     
     nvl clear
     
-    n "So... I stood up, and approached her."
+    play sound footsteps
     
     #approach alexis
     
+    $ renpy.pause(1.5, hard=True)
+    
     show alexis thinking with fade
+    
+    na "..."
     
     $ renpy.pause(1.5, hard=True)
     
-    nvl clear
-    
-    n "Her eyes..."
-    
-    n "I never thought that color could exist."
-    
-    nvl clear
-    
     show alexis surprised
-    
-    na "..."
     
     a "..."
     
     na "..."
     
-    n "She's inching away..."
+    na "(She's inching away...)"
     
-    n "I have to open my mouth or I'll just be another creep!"
+    na "Don't try the Avocado!" 
     
-    nvl clear
+
+    
+    a "..."
+    
+    na "It tastes like shit!"
+    
+    show alexis worried
+    
+    na "(Why on earth did I say that word...)"
+    
+    na "(Of course, girl's don't like that!)"
     
     na "Which stop are you getting off at!"
     
@@ -402,7 +443,7 @@ label start:
     
     a "N-newton station."
     
-    n "That's an obvious lie, Newton's in the complete opposite direction..."
+    na "(That's an obvious lie, Newton's in the complete opposite direction...)"
     
     nvl clear
     
@@ -411,42 +452,32 @@ label start:
     a "..."
     
     a "Yes."
-    
-    na "Um, anyway, um, right now I haven't eaten or drunk lately and I feel like I'm going to faint..."
-    
-    n "I'm not sure what's come over me, but I'm going to Hell for all the words that's spilling out of my mouth."
-    
-    n "There's nothing wrong with my body save my out of control beating heart."
-        
-    na "Do you have some Panadol? I'm not sure if - "
+       
+    na "I'm think I'm going to faint."
     
     show alexis surprised
     
-    a "Oh yes! I have some right here. Is three tablets enough?"
+    na "This...this...carriage is too hot..."
     
-    na "Yes, thank you so much!" 
+    na "I need water..."
     
-    na "Mind if we sit down? It's getting a little blurry..."
+    a "I have some water in my bag!"
     
-    a "Oh!"
+    show alexis worried
     
-    a "Come on, here."
+    a "Sit down here..."
     
-    #they sit down
+    n "Buried in half truths of course, but my act seems to be working."
     
-    n "So it's not exactly the most ethical way to start a conversation, but it's working!"
+    n "I'd better end it soon though, or I'm not going to live with myself."
     
-    n "The best part is when I bow my head and suddenly act like I'm in great pain."
+    n "Conversation, conversation..."
     
-    n "She automatically moves in close to see what's wrong, and her soft hair tickles my arm."
-    
-    n "If I keep this charade up any longer, I may not be able to live with myself for a few weeks."
-    
-    n "I notice her sketchbook, the one in which she scribbles in all day, and it's poking out of her slingbag."
+    n "What's that poking out of her bag?"
     
     nvl clear
     
-    na "Hey, what's that inside your bag?"
+    na "Hey, what's that?"
     
     show alexis worried
     
@@ -454,43 +485,55 @@ label start:
     
     na "Mind if I have a look inside?"
     
-    na "Sorry, it's just, I need something to focus on, or I'll really lose conscienceness."
+    na "Sorry, I'm just trying to keep myself to passing out here..."
     
-    a "Really?! Should I call an ambulance?"
+    a "Should I call an ambulance?"
     
     na "No, no, just reading something is okay. It's called a grounding technique, my doctor taught me that."
     
     na "Even if you have just doodles written down, just looking at them will help."
     
+    show alexis thinking
+    
+    a "Sure."
+    
     n "She actually believed that?!"
     
-    n "Like taking candy from a baby, except the baby is turning out more and more to be the girl of my dreams..."
+    n "I'm definitely inching closer and closer to Hell by now..."
     
-    n "That straightforward naviety of hers is so cute, it's maddening."
+    n "But is it really my fault? I didn't expect it, but she's just so naively cute."
     
     nvl clear
     
     #flips through sketchbook
     
+    play sound pageFlip
+    
     a "Erm...is it okay if you only see the first few pages?"
     
-    n "Is she embarassed?"
+    n "Is she embarrassed?"
     
-    n "These drawings of hers are really, really good though."
+    n "These drawings of her's are really, really good though."
+    
+    play sound pageFlip
+    
+    play sound pageFlip
     
     n "I don't know how many flavours of 'punk' there are apart from steampunk or cyberpunk, but she's all the science fiction styles down."
     
     n "Buildings, cities, skyscrapers, a few rough sketches of characters, all dressed up in their own unique style."
     
-    n "There's no way single person in the entire school would even think of drawing something like this."
+    n "There's no way anyone I know would even think of drawing something like this."
     
     nvl clear
     
-    na "This is amazing."
+    na "Hey, these are amazing!"
+        
+    show alexis smiling
+    
+    na "(She's smiling!)"
     
     na "Where did you learn all this?"
-    
-    show alexis smiling
     
     a "I'm happy you like it."
     
@@ -504,7 +547,7 @@ label start:
     
     a "Nononono, no one would buy these!"
     
-    n "I was exaggerating, of course, but I'd heard overcompliments are the best way to a girl's heart."
+    na "(I was exaggerating, of course, but I'd heard overcompliments are the best way to a girl's heart.)"
         
     na "And what are these?"
     
@@ -513,23 +556,29 @@ label start:
     n "A few pages on, the fantastical drawings ceased, and more mundane everyday sketches emerged."
     
     n "Most of them were random places around the city."
-       
-    nvl clear 
-    #time passes
     
-    #background 1
+    na "Isn't this the train we're in now!"
+    
+    a "Yeah! I spend an hour everyday on a train, so I couldn't help but sketch it."
+       
+    scene trainSideDreamy with fade
+    
+    #background 
+    play sound pageFlip
+    
     na "(*flip)"
 
     #background 2 
+    play sound pageFlip
     
     na "(*flip)"
     
     
     show alexis worried with fade
     
-    a "Sorry, do you dislike them?"
+    a "Do you dislike any of them?"
     
-    a "I make it a schedule to draw from real life reference every few weeks."
+    a "I'm not good at the realisticc stuff."
     
     a "My father always said that I needed to branch out into other styles, so I can find something I'm can really specialize in."
     
@@ -557,12 +606,14 @@ label start:
     
     #background
     
-    n "The windows flashed black, as we hurtled along the endless tunnel."
+    n "The windows turned black, which meant we were going underground."
     
     #background
     nvl clear
     
-    n "The engine hummed around us, the melody reaching deep into my heart and rattling my bones."
+    n "How many stations had it been already?"
+    
+    n "
     
     nvl clear
     

@@ -18,6 +18,7 @@ define footsteps = "sound/footsteps.wav"
 define thud = "sound/thud.wav"
 define doorCloseTrain = "sound/doorCloseTrain.wav"
 define pageTurn = "sound/pageTurn.wav"
+define static = "sound/static.wav"
 
 define ambientTrain = "sound/ambientTrain.wav"
 define wind = "sound/wind.wav"
