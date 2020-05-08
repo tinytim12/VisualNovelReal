@@ -19,13 +19,16 @@ define thud = "sound/thud.wav"
 define doorCloseTrain = "sound/doorCloseTrain.wav"
 define pageTurn = "sound/pageTurn.wav"
 define static = "sound/static.wav"
-define trainComing "sound/trainComing.wav"
+define trainComing = "sound/trainComing.wav"
 define beep = "sound/beep.wav"
+
 
 define ambientTrain = "sound/ambientTrain.wav"
 define wind = "sound/wind.wav"
 define stopTrain = "sound/stopTrain.wav"
 define ambientStation = "sound/ambientStation.wav"
+define loFi = "sound/loFi.wav"
+define cupNoodles = "sound/cupNoodles.wav"
 
 image alexis surprised = "Alexis/alexis_surprised.png"
 image alexis angry = "Alexis/alexis_angry.png"
@@ -42,14 +45,17 @@ image trainSideHorror = "Bg/trainSideHorror.jpg"
 image trainMiddle = "Bg/trainMiddle.jpg"
 image tunnel = "Bg/tunnel.jpg"
 image trainDoor ="Bg/trainDoor.jpg"
-image trainGantry ="Bg/trainGantry.jpg"
+image stationGantry ="Bg/stationGantry.jpg"
 image vending ="Bg/vending.jpg"
 image detention ="Bg/detention.jpg"
 image office ="Bg/office.jpg"
+define emergency ="Bg/emergency.jpg"
 
 define flash = Fade(1, 1, 1, color="#fff")
 define redFlash = Fade(0.25, 0.25, 0.25, color="#8a0303")
 define quickFlash = Fade(1, 1, 1, color="#fff")
+define wipe  = ComposeTransition(Dissolve(3.0), before=wipeleft)
+
 image black = "#000"
 
 # The game starts here.
@@ -61,12 +67,11 @@ label start:
     # images directory to show it.
         
     scene black 
-    
-    play sound wind loop fadein 1
-    
+       
+    play looper wind fadein 1
     n "It is not in the nature of trains to rebel." 
     
-    ncl clear
+    nvl clear
     
     n "{vspace=50}After all, they are just machines."
     
@@ -186,7 +191,7 @@ label start:
     
     n "{vspace=50}...to Point B"
     
-    stop sound
+    stop looper
     
     nvl clear
     
@@ -206,6 +211,8 @@ label start:
     $ renpy.pause(1, hard=True)
     
     n "Alright, what will it be today?"
+    
+    nvl clear
     
     n "That's the thing about the vending machine."
     
@@ -247,21 +254,23 @@ label start:
     
     na "(Maybe if I try a different technique, it won't give me the avocado again.)"
     
-     menu: 
+    menu: 
     
         "Just press the button normally":
+            
+            na "(After all, there's only one way to use a vending machine."
         
         "Press the button three times within one second!":
         
-        	na "(Come on, that's ridiculous!)"
-        	
-        	na "(As if that would do anything.)"
-        	
+            na "(Come on, that's ridiculous!)"
+            
+            na "(As if that would do anything.)"
+            
         "Kick it in the stomach!":
         
-        	na "(Come on, I'm not going to hurt it!)"
-        	
-        	na "(Plus, if the station staff sees me do that, I'm bound to get arrested.)"
+            na "(Come on, I'm not going to hurt it!)"
+            
+            na "(Plus, if the station staff sees me do that, I'm bound to get arrested.)"
     
     na "(In the end, the old ways are the best.)"
     
@@ -285,9 +294,11 @@ label start:
     
     show alexis worried with fade
     
+    a "..."
+    
     n "It's a girl."
     
-    n "Hey, I've seen her around before. She's one of the back row seaters in my Ethics class."
+    n "Hey, I've seen her around before. She's one of the girls who usually sit at the back row of the canteen."
     
     n "The one with purple eyes."
     
@@ -321,7 +332,7 @@ label start:
     
     a "Well..."
     
-    a "See you in class."
+    a "See you in school."
     
     na "Yeah..."
     
@@ -343,7 +354,7 @@ label start:
     
     nvl clear
     
-    scene stationSide with dissolve
+    scene stationSide with wipeleft
     
     n "This must be some sort of cruel fate."
     
@@ -359,7 +370,7 @@ label start:
     
     n "But destiny has already handed me a chance on a silver platter!"
     
-    n "I have no choice but to take it.
+    n "I have no choice but to take it."
     
     play sound trainComing fadein 1.0 fadeout 1.0
         
@@ -379,7 +390,9 @@ label start:
     
     show trainSideDreamy with fade
     
-    play sound ambientTrain loop fadein 1.0
+    show screen borders with dissolve
+    
+    play looper ambientTrain  fadein 1.0
     
     n "...The train's empty."
     
@@ -507,7 +520,7 @@ label start:
     
     #flips through sketchbook
     
-    play sound pageFlip
+    play sound pageTurn
     
     a "Erm...is it okay if you only see the first few pages?"
     
@@ -515,9 +528,9 @@ label start:
     
     n "These drawings of her's are really, really good though."
     
-    play sound pageFlip
+    play sound pageTurn
     
-    play sound pageFlip
+    play sound pageTurn
     
     n "I don't know how many flavours of 'punk' there are apart from steampunk or cyberpunk, but she's all the science fiction styles down."
     
@@ -564,12 +577,12 @@ label start:
     scene trainSideDreamy with fade
     
     #background 
-    play sound pageFlip
+    play sound pageTurn
     
     na "(*flip)"
 
     #background 2 
-    play sound pageFlip
+    play sound pageTurn
     
     na "(*flip)"
     
@@ -590,7 +603,7 @@ label start:
     
     show alexis smiling
     
-    n "She looked at me as if she would a lighthouse in the middle of a stormy sea, and I inwardly cheered."
+    n "She looked at me as if she would a lighthouse in the middle of a stormy sea."
     
     n "And to think I made that piece of advice up on the spot!"
     
@@ -613,7 +626,7 @@ label start:
     
     n "How many stations had it been already?"
     
-    n "
+    n "It felt like we had passed ten by now."
     
     nvl clear
     
@@ -711,18 +724,14 @@ label start:
     
     na "It's not a matter of practice."
     
-    na "It's about...I mean, we're at school, aren't we? Doing our maths and science and studying to become the nation's next greatest doctors."
+    na "You pick anyone off the street and they can memorise a textbook, no problem."
     
-    na "So...it's not a matter of whether I start drawing or not, in the end it won't matter, right?"
-    
-    a "I get what you mean."
+    na "But it takes the chosen ones to have true talent."
     
     show alexis determined
     
-    a "But art is like that."
-    
-    a "You have to make sacrifices."
-    
+    a "That's not true."
+   
     a "I don't think I'm especially talented."
     
     a "So I have to keep working hard."
@@ -783,13 +792,7 @@ label start:
     
     a "You seem really proud of it."
     
-    na "There has to be a reason why God marked me this way, you know?"
-    
-    na "Just the same way he marked you."
-    
-    na "So don't count yourself out. You're definitely special."
-    
-    a "And so are you!"
+    na "There has to be a reason why I was marked this way, you know?"
     
     na "(My brain moved on autopilot.)"
     
@@ -842,6 +845,9 @@ label start:
     #screen goes dark
 
 label trainCrash:
+    stop music
+    
+    stop looper
     
     scene black
     
@@ -851,25 +857,25 @@ label trainCrash:
     
     play sound wind loop fadein 1
     
-    n "Panic."
+    n "She said nothing."
     
     show black with redFlash
     
-    n "Terror."
+    n "With the corpses around her, she looked at me and said nothing."
     
     show black with redFlash
     
-    n "Despair."
+    n "And then I found myself falling to the floor."
     
     show black with redFlash
     
-    n "The ugly and the desperate clawing for their lives."
-        
-    n "I could see it all."
+    n "My face rested against a dying man's."
     
-    n "Standing up with my flayed skin dangling down, I could believe."
+    n "With his last breath, he cursed me."
     
-    n "That in this world, there was a Hell on Earth - "
+    n "This wasn't my fault."
+    
+    n "How could I have done anything - {nw} "
     
     stop sound
     
@@ -889,35 +895,37 @@ label trainCrash:
     
     show trainside
     
-    n "The train..."
-    
-    n "it's not moving anymore."
-    
     n "I'm on the ground."
     
-    n "That means the train must stopped so hard I was sent flying."
+    n "We've...stopped?"
     
-    a ",,,"
+    a "..."
     
-    n "Alexis...it looks like she was roughed up a bit too."
+    na "(Is she okay?)"
+    
+    na "(Ouch...)"
+    
+    na "(I think my tailbone's going to need a pillow, stat.)"
     
     nvl clear
     
     a "..."
     
-    n "These stupid trains."
+    hide alexis
     
-    n "I know people were complaining at the breakdowns recently, but it was just ridiculous."
+    n "Calm down."
     
-    n "What if I, or Alexis, had gotten seriously hurt?"
+    n "I know people were complaining at the breakdowns recently, so this is just another one."
     
-    n "Without thinking my fist slammed into the pole next to me."
+    n "Couldn't they have stopped above ground at least?"
+    
+    n "I can't see anything outside."
     
     nvl clear
         
     n "No, wait..."
     
-    n "If I calmed down enough to think about it, this was the perfect opportunity."
+    n "Atually, this is the perfect opportunity."
     
     n "I heard girls got scared easily when it came to situations like this."
     
@@ -939,7 +947,7 @@ label trainCrash:
     
     a "..."
     
-    na "Don't worry. I'm sure they'll get us out soon."
+    na "Don't worry. I'm sure we'll start moving again soon."
     
     a "..."
     
@@ -963,9 +971,9 @@ label trainCrash:
 
     a "We have to get out of this tunnel."
     
-    na "(Was it my imagination, or was her voice coming out huskier?)"
+    na "(Was it my imagination, or did her voice come out huskier?)"
     
-    na "(As if she had aged ten years in a single instant, such was the seriousness of her tone.)"
+    na "(As if she was channeling the spirit of herself ten years older.)"
     
     na "Look, Alexis, calm down."
     
@@ -1005,9 +1013,7 @@ label trainCrash:
     
     n "Which was weird, because the driver of the train was located at the front. If anything, asking him for a help would be more sensible, instead of panicking and straight away opening the emergency exit at the back."
     
-    n " I was debating how to tell her this, but then conveniently the intercom above us started to speak."
-    
-    nvl clear
+    play sound static
     
     i "{cps=*0.7} Dear...passengers. {/cps}"
     
@@ -1017,7 +1023,11 @@ label trainCrash:
     
     i "{cps=*0.7} The train...will resume...shortly  {/cps}"
     
-    na "See, There's nothing to worry about."
+    nvl clear
+    
+    na "You hear that?"
+
+    na "We'll be back running in no time."
     
     show alexis thinking
     
@@ -1037,25 +1047,25 @@ label trainCrash:
     
     show alexis thinking
     
-    n "She ignored that question and continued to march forward."
+    n "She just continues to march forward."
     
-    hide alexis with fade
+    nvl clear
     
-    n "What was wrong with her?"
+    n "Now we're in the last carriage."
     
-    n "The other passengers in the train were probably sitting in their seats, obediently waiting for the crisis to resolve."
+    n "Only the emergency exit lies before us."
     
-    n "But instead, we walked down the carriage like panicked idiots."
-    
-    n "We soon reached the door that divided this carriage from the next carriage."
-    
+    n "Does she really expect us to go out there, in the dark?"
+        
     show alexis determined
     
-    n "She stepped forward to pull it open."
+    na "(She steps forward to pull it open.)"
     
     #shudder
     
-    na "(The door opened a single centimeter before jerking to a stop.)"
+    play sound thud
+    
+    na "(The door opens a single centimeter before jerking to a stop.)"
     
     show alexis worried
     
@@ -1067,58 +1077,66 @@ label trainCrash:
     
     na "Let me try!"
     
-    na "(I overexaggerated my attempts at first, huffing and puffing like a true man worked.)"
+    play sound thud
     
-    na "(But even when I genuinely gave it my best, the door wouldn't budge.)"
+    queue sound thud
     
-    na "(Do train doors normally jam this badly?)"
+    na "(I overexaggerate my attempts at first, huffing and puffing like a true man worked.)"
+    
+    na "(But even when I genuinely give it my best, the door wouldn't budge.)"
+    
+    na "(Isn't the emergency exit supposed to be easy to open?)"
     
     na "(It's the first time I've heard of this.)"
     
     show alexis thinking
     
-    a "There should be a way to open it." 
+    a "The tracks are the same..." 
     
-    na "(Again, as if barely acknowledging my presence, she turn around and began examining the train.)"
+    na "(Again, as if barely acknowledging my presence, she turns around and begins examining the train.)"
+        
+    na "Alexis, talk to me."
     
-    hide alexis with fade
+    na "You know what's going on, don't you?"
     
-    n "The air of the train was getting to me."
+    a "The first panel...no, the second..."
     
-    n "All that action must have worked it up, because my mouth was dryer than the Sahara desert."
+    na "Talk to me!"
     
-    n "So I stood there sweating my guts out, and watched Alexis rummage through the seats as if searching for a hidden pot of gold."
+    n "My voice comes out desperate."
     
-    n "Nothing about this situation made any sense."
+    n "All that bravado, drained down to its last drop."
     
-    na "What are you doing?!"
+    n "I'm not scared of the train. Any moment, it would start up again and bring us to our destination"
     
-    na "(My voice came out rougher than I intended.)"
+    n "The only thing that terrifies me, is her eyes."
     
-    na "(And she didn't even bother to look around.)"
+    nvl clear
     
-    show alexis thinking
+    hide alexis
     
-    a "I'm looking for the fishing pole."
+    n "But even that...fails to reach her."
     
-    na "What?"
+    n "It's as if I don't even exist."
     
-    a "..."
+    n "Was it because I didn't help her up in the beginning?"
     
-    n "And apparently that didn't even deserve a reply."
+    n "Because I had the audacity to ask her out?"
+
+    n "Because I had on purpose given her that disgusting candy?"
     
-    n "I had thought she was just scared, but I realised what she was really communicating was that she thought I was absolutely useless."
+    nvl clear
     
-    n "What was the hurry, anyway?"
+    n "In school, if you were furious at someone, absolutely mad..."
     
-    n "She's just going off on her own..."
+    n "You would ignore them."
     
-    n "For the first time, her purple expression sparked a new emotion in me."
+    n "For that was the cruelest thing."
     
-    n "Confusion."
+    n "And she's dead set on inflicting as much pain as possible."
     
-    hide alexis with fade
-    
+    n "What did I do to her...?"
+
     nvl clear
     
     n "..."
@@ -1133,6 +1151,8 @@ label trainCrash:
     
     nvl clear
     
+    scene trainDoor
+    
     n "In every carriage, there's an emergency communication button."
     
     n "You simply press the red button, and you can contact the driver directly through an intercom."
@@ -1143,7 +1163,18 @@ label trainCrash:
     
     nvl clear
     
-    na "(I pressed the button firmly, and spoke clearly into the microphone.)"
+    n "Yes..."
+    
+    n "Will that finally paint me as worthy in her eyes?"
+    
+    nvl clear
+    play sound static
+    
+    n "Hello?"
+    
+    play sound static
+    
+    i "(*Bzzzt*)"
     
     na "Hello? Is this the driver?"
     
@@ -1166,13 +1197,15 @@ label trainCrash:
     nvl clear
     
     n "I peered into the carriages ahead, trying to see if the driver's room was visible from here."
-    
+        
     n "But the handles and doors and seats meshed together into one unrecognisable jungle gym, such that anything past the third carriage could have been easily hidden."
     
     n "As I craned my head trying to get a better view, the veins of my heart froze ice cold."
     
     nvl clear
     
+    scene trainMiddle with dissolve
+
     n "There was nothing in sight save for the insides of the train."
     
     n "No driver, no passengers, no people, nothing."
@@ -1203,15 +1236,150 @@ label trainCrash:
     
     n "No driver...train malfunction...what else could this be?"
     
-    n "And why the fuck did they have to pick me of all people?"
+    nvl clear
     
-    n "There's four million people in this city and I have to be the only unlucky one!"
-
-    n "I'm a diligent student, I submit my homework most of the time, my parents are good people and I've always been nice to the people I meet..."
+    n "No..."
     
-    n "Why only me?!"
+    n "That's too unreal."
+    
+    n "That would never happen."
+    
+    n "If it really was a terrorist attack, where aren't there more gunshots?"
+    
+    n "Why leave us alone for so long?"
     
     nvl clear
+    
+    #Howard appears
+    
+    na "...?"
+    
+    na "(There's someone there!)"
+    
+    na "(Hello?)" 
+    
+    na "(Does he even hear me?)"
+    
+    na "(He's probably too far away.)"
+    
+    na "(Thank goodness there was another passenger after all.)"
+    
+    scene trainSide with wipeleft
+    
+    a "Alexis, we found someone!"
+
+    show alexis angry
+    
+    a "Close the door."
+    
+    a "Now."
+    
+    na "..What?"
+    
+    scene trainMiddle with wipeRight
+    
+    na "(Is it my imagination...)"
+    
+    na "(Or is he a lot closer now?)"
+    
+    na "(Almost as if...)
+    
+    na "(He's running.)
+   
+    na "(Towards us.)"
+    
+    play music dread fadein 1.0
+    
+    #Howard moves
+    
+    play sound thud 
+    
+    na "(The clang behind me jumpstarts my heart)"
+    
+    scene emergency with slideleft
+    
+    show alexis determined
+    
+    na "(Alexis is crouched by the handle, and is sticking some sort of metal pole in the gap between the door."
+    
+    na "(One of the panels to the seats lies torn open beside her. Had she gotten the pole from there?"
+    
+    na "(Her whole body is arched like a frenzied cat.)"
+    
+    na "(As if she's trying to claw her way out from something."
+    
+    show alexis angry
+    
+    a "Close the fucking door!"
+    
+    scene trainMiddle with slideright
+    
+    #Howard has moved
+    
+    na "(Hey, hey...)"
+    
+    na "(Is that even a man?")
+    
+    na "(My body moves on automatic, and slides the door shut.)"
+    
+    na "(The intercom.)"
+    
+    na "(We need help.)"
+    
+    play sound static
+        
+    i "*bzzt"
+    
+    na "Excuse me."
+   
+    na "There's a dangerous man on board the train."
+    
+    #Howard moves
+    
+    play sound static
+        
+    i "*bzzt"
+    
+    i "...ac......."
+    
+    na "Hello?"
+    
+    i "bla.....ki...."
+    play sound static
+    
+    scene trainDoor with redFlash
+
+    
+    na "(Was the intercom damaged?)"
+    
+    i "Hail.......ack......"
+    
+    
+    na "(The door won't do any good, won't it?)"
+    
+    na "(It has jaws.)"
+    
+    na "(It'll tear through the glass and gobble us up.)"
+    
+    i "Hail...bla...King..."
+    
+    scene trainDoor with redFlash
+    
+    i "Hail...the Black King..."
+    
+    #flashes of the devestation
+    
+    scene trainSideHorror with redFlash
+    
+    renpy.pause(0.5, True)
+    
+    scene trainDoor with redFlash
+    
+    na "(Alexis hasn't made any progress.)
+    
+    na "(Because of her pathetic strength, we're going to be eaten.)"
+    
+    ive stopped here
     
     n "The heat."
     
@@ -1375,61 +1543,7 @@ label trainCrash:
     
     na "(I kept my eyes on the approaching figure, even as I depressed the button.)"
     
-    na "Hello?"
-        
-    i "*bzzt"
     
-    na "(It was only three carriages away now.)"
-    
-    na "Excuse me."
-    
-    na "(A door burst open - now it was two.)"
-   
-    na "There's a dangerous man on board the train."
-    
-    na "Can you call the police?"
-    
-    na "(The man could have just been a panicked passenger wanting to seek help, it was true.)"
-    
-    na "(But take a closer look and you would notice how its feet shuffled forward perfectly along the guided floor lines.)"
-    
-    na "(How its head bumped smoothly against the hanging handles without slowing down.)"
-    
-    na "(This man was running in a line that was perfectly straight.)"
-    
-    na "(As if he knew exactly where to to go.)"
-    
-    # flashes?
-    
-    na "(Something about terrified me.)"
-    
-    # flashes
-    
-    na "And the worst part was..."
-    
-    na "The man had fangs."
-    
-    na "I didn't know what was happening, but what jutted from his jaw were a wolf's fangs."
-    
-    i "*bzzt"
-    
-    na "(The intercom was breaking up.)"
-    
-    na "(Had the crash damaged some of its systems after all?)"
-    
-    i "...ac......."
-    
-    i "bla.....ki...."
-    
-    i "Hail.......ack......"
-    
-    na "(Another door thrown aside.)"
-    
-    na "(Only one single carriage seperated us from him.)"
-    
-    i "Hail...bla...King..."
-    
-    i "Hail...the Black King..."
     
     # more red flashes 
 
@@ -1962,7 +2076,7 @@ label traintracks:
     
     show alexis worried
     
-    na "(Wearing a grim expression, Alexis began to recount the tale.)
+    na "(Wearing a grim expression, Alexis began to recount the tale.)"
     
     #switch to story mode
     
@@ -1978,7 +2092,7 @@ label traintracks:
     
     nvl clear
     
-    n "To the outsider, the city was the greatest in the world.
+    n "To the outsider, the city was the greatest in the world."
     
     n "No one outside the city knew about the secret population that lived away from the public eye."
     
@@ -2090,7 +2204,7 @@ label traintracks:
     
     a "Do you see how someone can be influenced by it?"
     
-    na "(It was a hard answer, and I wasn't one to ponder over the philosopies of criminals, but I tried to think it through nonetheless.)
+    na "(It was a hard answer, and I wasn't one to ponder over the philosopies of criminals, but I tried to think it through nonetheless.)"
     
     na "(Any thoughts ahead, however, were broken by her sudden gasp.)"
     
@@ -2214,7 +2328,7 @@ label traintracks:
     
     a "Then he got a lawyer friend of his and you know what happened? The three of us got so worked up that we bypassed our aunt and went straight to the courts."
     
-    a "The cult was outed and then shut down within a month.
+    a "The cult was outed and then shut down within a month."
    
     a "To this day, my aunt still believes that the government gave them a bad hand."
     
@@ -2232,11 +2346,11 @@ label traintracks:
     
     na "Luckily for us we'll still agile thinkers."
     
-    show alexis smiling.
+    show alexis smiling
     
     a "Hopefully."
     
-    a "Anyway.".
+    a "Anyway."
     
     a "That was my crazy story."
     
@@ -2254,7 +2368,7 @@ label traintracks:
     
     na "There was time I, uh, smoked a full cigerette once..."
     
-    na "(Her smile deepened, and I wasn't sure what that meant.)
+    na "(Her smile deepened, and I wasn't sure what that meant.)"
     
     nvl clear
     
@@ -2726,7 +2840,7 @@ label traintracks:
 
     a "The shading is really good."
     
-    a "i don't know what to say.
+    a "I don't know what to say."
     
     na "(Again, his body, still holding out the drawing, stiffened."
     
@@ -2760,7 +2874,7 @@ label traintracks:
     
     a "Where do you live?"
     
-    a 'The bus should also be pretty reliable."
+    a "The bus should also be pretty reliable."
     
     n "Considering we had been attacked by a weirdo hours earlier, only to meet with another weirdo after that, I would say we were taking things lightly."
     
@@ -2846,7 +2960,7 @@ label traintracks:
     
     a "Thanks."
     
-    a Bye! See you tomorrow!"
+    a "Bye! See you tomorrow!"
    
     n "She was rushing to get on, so she didn't see the expression on my face."
     

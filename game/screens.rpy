@@ -96,7 +96,7 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen borders:
-    add "Screens/cinematicBorder.jpg"
+    add "Screens/cinematicBorder.png"
 
 screen say(who, what):
     style_prefix "say"

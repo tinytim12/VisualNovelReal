@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 2679: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        a "i don't know what to say.
+File "game/options.rpy", line 7: expected statement.
+    renpy.music.register_channel("looper", True)
+                                                ^
 
 Ren'Py Version: Ren'Py 7.3.2.320
-Tue May 05 13:56:17 2020
+Fri May 08 23:39:31 2020
