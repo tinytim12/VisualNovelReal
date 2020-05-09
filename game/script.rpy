@@ -13,7 +13,7 @@ define p = Character("Police")
 define i = Character("Intercom")
 
 define crash = "sound/crash.wav"
-define footstepsGraveLoop = "sound/footstepsGraveLoop.mp3"
+define footstepsGravel = "sound/footstepsGravel.wav"
 define footsteps = "sound/footsteps.wav"
 define thud = "sound/thud.wav"
 define doorCloseTrain = "sound/doorCloseTrain.wav"
@@ -21,7 +21,8 @@ define pageTurn = "sound/pageTurn.wav"
 define static = "sound/static.wav"
 define trainComing = "sound/trainComing.wav"
 define beep = "sound/beep.wav"
-
+define footstepsFast = "sound/footstepsFast.wav"
+define footstepsGravelFast = "sound/footstepsGravelFast.wav"
 
 define ambientTrain = "sound/ambientTrain.wav"
 define wind = "sound/wind.wav"
@@ -29,6 +30,8 @@ define stopTrain = "sound/stopTrain.wav"
 define ambientStation = "sound/ambientStation.wav"
 define loFi = "sound/loFi.wav"
 define cupNoodles = "sound/cupNoodles.wav"
+define dread = "sound/dread.wav"
+define horror = "sound/horror.wav"
 
 image alexis surprised = "Alexis/alexis_surprised.png"
 image alexis angry = "Alexis/alexis_angry.png"
@@ -38,13 +41,22 @@ image alexis smiling = "Alexis/alexis_smiling.png"
 image alexis thinking = "Alexis/alexis_thinking.png"
 image alexis worried = "Alexis/alexis_worried.png"
 
+image howard close1 = "Howard/HowardClose1.png"
+image howard close2 = "Howard/HowardClose2.png"
+image howard close3 = "Howard/HowardClose3.png"
+image howard close4 = "Howard/HowardClose4.png"
+image howard close5 = "Howard/HowardClose5.png"
+
 image stationSide = "Bg/stationSide.jpg"
 image trainSide = "Bg/trainSide.jpg"
 image trainSideDreamy = "Bg/trainSideDreamy.jpg"
 image trainSideHorror = "Bg/trainSideHorror.jpg"
+image trainMiddleHorror = "Bg/trainMiddleHorror.jpg"
 image trainMiddle = "Bg/trainMiddle.jpg"
+image trainMiddleHoward = "Bg/trainMiddleHoward.jpg"
 image tunnel = "Bg/tunnel.jpg"
 image trainDoor ="Bg/trainDoor.jpg"
+image trainDoorHoward = "Bg/trainDoorHoward.jpg"
 image stationGantry ="Bg/stationGantry.jpg"
 image vending ="Bg/vending.jpg"
 image detention ="Bg/detention.jpg"
@@ -53,7 +65,7 @@ define emergency ="Bg/emergency.jpg"
 
 define flash = Fade(1, 1, 1, color="#fff")
 define redFlash = Fade(0.25, 0.25, 0.25, color="#8a0303")
-define quickFlash = Fade(1, 1, 1, color="#fff")
+define quickFlash = Fade(0.25, 0.25, 0.25, color="#fff")
 define wipe  = ComposeTransition(Dissolve(3.0), before=wipeleft)
 
 image black = "#000"
@@ -67,8 +79,11 @@ label start:
     # images directory to show it.
         
     scene black 
-       
+    
     play looper wind fadein 1
+    
+    
+
     n "It is not in the nature of trains to rebel." 
     
     nvl clear
@@ -125,7 +140,7 @@ label start:
     
     #scene of the devestation
     
-    scene trainSideHorror with fade
+    scene trainMiddleHorror with fade
     
     n "I am inside the carcass of a rebel."
     
@@ -200,17 +215,18 @@ label start:
     
     play music loFi fadeout 1.0 fadein 1.0 loop
     
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(2.5, hard=True)
     
     scene stationSide with dissolve
     
-    $ renpy.pause(2, hard=True)
+    $ renpy.pause(2.5, hard=True)
     
     scene vending with dissolve
     
-    $ renpy.pause(1, hard=True)
+    $ renpy.pause(2, hard=True)
     
     n "Alright, what will it be today?"
+    
     
     nvl clear
     
@@ -246,9 +262,11 @@ label start:
     
     n "I've always stroked the buttons with the utmost care."
     
+    nvl clear
+    
     na "Alright..."
     
-    na "Luck number thirteen, here we go..."
+    na "Lucky number thirteen, here we go..."
     
     na "..."
     
@@ -275,6 +293,8 @@ label start:
     na "(In the end, the old ways are the best.)"
     
     play sound beep
+    
+    na "(Just press the button...)"
     
     play sound thud
     
@@ -310,11 +330,11 @@ label start:
     
     show alexis surprised
     
-    a "Oh! I'm sorry."
+    q "Oh! I'm sorry."
     
-    a "But if you like Orange..."
+    q "But if you like Orange..."
     
-    a "I don't mind swapping it for Avocado."
+    q "I don't mind swapping it for Avocado."
     
     na "(She unfurled her hand to reveal the orange counterpart of the candy I had received.)"
     
@@ -328,17 +348,21 @@ label start:
     
     show alexis worried 
     
-    a "Thanks."
+    q "Thanks."
     
-    a "Well..."
+    q "Well..."
     
-    a "See you in school."
+    q "See you in school."
     
     na "Yeah..."
     
     hide alexis
     
     na "...."
+    
+    n "What..."
+    
+    scene vending with hpunch
     
     n "What the hell did I just do?"
     
@@ -428,7 +452,7 @@ label start:
     
     show alexis surprised
     
-    a "..."
+    q "..."
     
     na "..."
     
@@ -438,7 +462,7 @@ label start:
     
 
     
-    a "..."
+    q "..."
     
     na "It tastes like shit!"
     
@@ -452,9 +476,9 @@ label start:
     
     show alexis worried
     
-    a "..."
+    q "..."
     
-    a "N-newton station."
+    q "N-newton station."
     
     na "(That's an obvious lie, Newton's in the complete opposite direction...)"
     
@@ -462,9 +486,9 @@ label start:
     
     na "Sorry, I don't mean to shout so loud, my voice is just like that, and the train's really echoey underground, so that adds to the volume, you know what I mean?"
     
-    a "..."
+    q "..."
     
-    a "Yes."
+    q "Yes."
        
     na "I'm think I'm going to faint."
     
@@ -474,11 +498,11 @@ label start:
     
     na "I need water..."
     
-    a "I have some water in my bag!"
+    q "I have some water in my bag!"
     
     show alexis worried
     
-    a "Sit down here..."
+    q "Sit down here..."
     
     n "Buried in half truths of course, but my act seems to be working."
     
@@ -494,13 +518,13 @@ label start:
     
     show alexis worried
     
-    a "This? It's just a book."
+    q "This? It's just a book."
     
     na "Mind if I have a look inside?"
     
     na "Sorry, I'm just trying to keep myself to passing out here..."
     
-    a "Should I call an ambulance?"
+    q "Should I call an ambulance?"
     
     na "No, no, just reading something is okay. It's called a grounding technique, my doctor taught me that."
     
@@ -508,7 +532,7 @@ label start:
     
     show alexis thinking
     
-    a "Sure."
+    q "Sure."
     
     n "She actually believed that?!"
     
@@ -522,7 +546,7 @@ label start:
     
     play sound pageTurn
     
-    a "Erm...is it okay if you only see the first few pages?"
+    q "Erm...is it okay if you only see the first few pages?"
     
     n "Is she embarrassed?"
     
@@ -548,9 +572,9 @@ label start:
     
     na "Where did you learn all this?"
     
-    a "I'm happy you like it."
+    q "I'm happy you like it."
     
-    a "My dad was a painter, so I just learned from him."
+    q "My dad was a painter, so I just learned from him."
     
     na "This is seriously Picasso tier."
     
@@ -558,7 +582,7 @@ label start:
     
     show alexis surprised
     
-    a "Nononono, no one would buy these!"
+    q "Nononono, no one would buy these!"
     
     na "(I was exaggerating, of course, but I'd heard overcompliments are the best way to a girl's heart.)"
         
@@ -572,7 +596,7 @@ label start:
     
     na "Isn't this the train we're in now!"
     
-    a "Yeah! I spend an hour everyday on a train, so I couldn't help but sketch it."
+    q "Yeah! I spend an hour everyday on a train, so I couldn't help but sketch it."
        
     scene trainSideDreamy with fade
     
@@ -589,11 +613,11 @@ label start:
     
     show alexis worried with fade
     
-    a "Do you dislike any of them?"
+    q "Do you dislike any of them?"
     
-    a "I'm not good at the realisticc stuff."
+    q "I'm not good at the realistic stuff."
     
-    a "My father always said that I needed to branch out into other styles, so I can find something I'm can really specialize in."
+    q "My father always said that I needed to branch out into other styles, so I can find something I'm can really specialize in."
     
     na "If you want my take on it, anybody can draw anything from real life."
     
@@ -630,23 +654,23 @@ label start:
     
     nvl clear
     
-    show alexis smiling
+    show alexis smiling with fade
     
-    a "...A concept artist would be really hard. Everyone wants to be one. Some people work for ten years before they finally get that position."
+    q "...A concept artist would be really hard. Everyone wants to be one. Some people work for ten years before they finally get that position."
     
     na "A concept artist? You mean, like for a movie?"
     
-    a "Movies are great, but they're too competitive. I'm thinking maybe for a video game studio."
+    q "Movies are great, but they're too competitive. I'm thinking maybe for a video game studio."
     
     na "Ubisoft! Or Blizzard!"
     
     show alexis worried
     
-    a "Those companies are competitive too! I won't get in."
+    q "Those companies are competitive too! I won't get in."
     
     show alexis thinking
     
-    a "Maybe in a small studio..."
+    q "Maybe in a small studio..."
     
     na "Let me tell you something."
     
@@ -654,15 +678,15 @@ label start:
     
     show alexis surprised
     
-    a "I told you, I won't get it!"
+    q "I told you, I won't get it!"
     
     show alexis determined
     
-    a "I'm going to an art university after this."
+    q "I'm going to an art university after this."
     
     na "You sure you're going to need it?" 
     
-    a "Big companies require a university education!"
+    q "Big companies require a university education!"
     
     na "Eh, degrees are overated."
     
@@ -670,25 +694,25 @@ label start:
     
     show alexis surprised
     
-    a "Oh, really?!" 
+    q "Oh, really?!" 
     
     na "Yeah, also Mark Zuckerburg, and Lady Gaga."
     
-    a "Who's Mark Zuckerburg?"
+    q "Who's Mark Zuckerburg?"
     
     na "You seriously don't know?"
     
     show alexis worried
     
-    a "It sounds familiar, sorry..."
+    q "It sounds familiar, sorry..."
     
     na "He was the first man on the moon, how could you not know him?"
     
-    a "First man on the moon - "
+    q "First man on the moon - "
     
     show alexis surprised
     
-    a "No wait, are you sure...?"
+    q "No wait, are you sure...?"
     
     na "I was kidding."
     
@@ -696,21 +720,21 @@ label start:
     
     show alexis smiling
     
-    a "Oh, that guy!"
+    q "Oh, that guy!"
     
-    a "My father was talking about him."
+    q "My father was talking about him."
     
-    a "He said that I shouldn't follow his example."
+    q "He said that I shouldn't follow his example."
     
     na "Of what, dropping out?"
     
     show alexis thinking
     
-    a "Yes. He said I wasn't smart enough."
+    q "Yes. He said I wasn't smart enough."
     
     na "Anyone who carries around a sketchbook like that a freaking genius."
         
-    a "What do you mean?"
+    q "What do you mean?"
     
     na "Well..."
     
@@ -720,7 +744,7 @@ label start:
     
     show alexis smiling
     
-    a "Anyone can learn to draw, if they practiced." 
+    q "Anyone can learn to draw, if they practiced." 
     
     na "It's not a matter of practice."
     
@@ -730,11 +754,11 @@ label start:
     
     show alexis determined
     
-    a "That's not true."
+    q "That's not true."
    
-    a "I don't think I'm especially talented."
+    q "I don't think I'm especially talented."
     
-    a "So I have to keep working hard."
+    q "So I have to keep working hard."
     
     na "No, you're definitely special."
     
@@ -742,7 +766,7 @@ label start:
     
     show alexis smiling
     
-    a "How?"
+    q "How?"
     
     na "Your eyes." 
     
@@ -750,7 +774,7 @@ label start:
     
     show alexis surprised
     
-    a "Chosen one?"
+    q "Chosen one?"
     
     show alexis smiling
     
@@ -758,15 +782,15 @@ label start:
     
     na "(She was beginning to let more of her show.)"
     
-    a "My father says it's just pigments."
+    q "My father says it's just pigments."
     
     na "Pigments that are a one in a million."
     
-    a "We're all special in our own way."
+    q "We're all special in our own way."
     
     na "Yeah, now that you mention it, I'm a pretty big deal myself."
     
-    a "Oh?"
+    q "Oh?"
     
     na "(I slipped my hand out of my pocket and showed it to her.)"
     
@@ -780,9 +804,9 @@ label start:
     
     show alexis surprised
     
-    a "Is that a comet?"
+    q "Is that a comet?"
     
-    a "It's beautiful."
+    q "It's beautiful."
     
     na "You can touch it if you want."
     
@@ -790,7 +814,7 @@ label start:
     
     na "(She giggled again.)"
     
-    a "You seem really proud of it."
+    q "You seem really proud of it."
     
     na "There has to be a reason why I was marked this way, you know?"
     
@@ -857,17 +881,19 @@ label trainCrash:
     
     play sound wind loop fadein 1
     
+    scene trainMiddleHorror with fade
+    
     n "She said nothing."
     
-    show black with redFlash
+    show trainMiddleHorror with redFlash
     
     n "With the corpses around her, she looked at me and said nothing."
     
-    show black with redFlash
+    show trainMiddleHorror with redFlash
     
     n "And then I found myself falling to the floor."
     
-    show black with redFlash
+    show trainMiddleHorror with redFlash
     
     n "My face rested against a dying man's."
     
@@ -883,6 +909,8 @@ label trainCrash:
     
     #flash
     
+    show black with quickFlash
+    
     na "Gaaarrggh!"
     
     n "What -"
@@ -893,7 +921,7 @@ label trainCrash:
     
     nvl clear
     
-    show trainside
+    show trainside with quickFlash
     
     n "I'm on the ground."
     
@@ -925,7 +953,7 @@ label trainCrash:
         
     n "No, wait..."
     
-    n "Atually, this is the perfect opportunity."
+    n "Actually, this is the perfect opportunity."
     
     n "I heard girls got scared easily when it came to situations like this."
     
@@ -941,7 +969,7 @@ label trainCrash:
     
     na "Alexis, are you okay?"
     
-    show alexis thinking with fade
+    show alexis thinking with dissolve
     
     na "Are you hurt anywhere?"
     
@@ -955,9 +983,9 @@ label trainCrash:
     
     na "(Does she have a fear of these sort of situations?)"
     
-    na "Well, there's point in standing around."
+    na "Well..."
     
-    na "Let's just have a seat and wait for them to arrive."
+    na "Shall we take a seat, first?"
     
     show alexis determined
     
@@ -1003,9 +1031,23 @@ label trainCrash:
     
     nvl clear
     
-    na "(I quickly darted up to walk in front of her)."
+    na "(I quickly dart up to walk in front of her)."
     
-    na "It's gonna be a long walk to the end."
+    na "(It's gonna be a long walk to the end.)"
+    
+    play sound footsteps
+
+    
+    scene trainDoor with wipeleft
+    
+    $renpy.pause(2, True)
+    
+    play sound  footsteps
+    
+    scene trainSide with wipeleft
+    
+    $renpy.pause(1, True)
+
     
     n "We had gotten on the train in the exact middle carriage, which meant that both ends of the train were equally as far from us."
     
@@ -1051,7 +1093,21 @@ label trainCrash:
     
     nvl clear
     
+    play sound footsteps
+    
+    scene trainDoor with wipeleft
+    
+    $renpy.pause(2, True)
+    
+    play sound footsteps
+    
+    scene trainSide with wipeleft
+    
+    $renpy.pause(1, True)
+    
     n "Now we're in the last carriage."
+    
+    scene emergency with dissolve
     
     n "Only the emergency exit lies before us."
     
@@ -1061,9 +1117,13 @@ label trainCrash:
     
     na "(She steps forward to pull it open.)"
     
+    nvl clear
+    
     #shudder
     
     play sound thud
+    
+    scene emergency with hpunch
     
     na "(The door opens a single centimeter before jerking to a stop.)"
     
@@ -1081,7 +1141,9 @@ label trainCrash:
     
     queue sound thud
     
-    na "(I overexaggerate my attempts at first, huffing and puffing like a true man worked.)"
+    scene emergency with hpunch
+    
+    na "(I overexaggerate my attempts at first, huffing and puffing like a true man would.)"
     
     na "(But even when I genuinely give it my best, the door wouldn't budge.)"
     
@@ -1089,35 +1151,66 @@ label trainCrash:
     
     na "(It's the first time I've heard of this.)"
     
-    show alexis thinking
+    scene trainSide with wiperight
+    
     
     a "The tracks are the same..." 
     
     na "(Again, as if barely acknowledging my presence, she turns around and begins examining the train.)"
-        
-    na "Alexis, talk to me."
-    
-    na "You know what's going on, don't you?"
     
     a "The first panel...no, the second..."
     
-    na "Talk to me!"
+    na "What are you doing?"
+    
+    a "...."
+    
+    show alexis thinking
+    
+    a "I'm looking for a tool to open the door."
+    
+    a "There's a screw wedged in there that's blocking the opening mechanism."
+    
+    a "We can use the spare pole located under one of those seats."
+    
+    na "(...How does she know that?)"
+    
+    na "(All with one glance?)"
+    
+    show alexis determined
+    
+    a "Are you satisfied?"
+    
+    a "Please move aside."
+    
+    na "No, what are you talking about?"
+    
+    show alexis thinking
+    
+    na "(She looks away and brushes past me.)"
+    
+    na "(Forcefully, like you would strike one of the handles dangling on the ceiling."
+    
+    scene trainSide with hpunch
+    
+    na "Alexis!"
     
     n "My voice comes out desperate."
+        
+    n "I was beginning to realise that the only one afraid here, was me."
     
     n "All that bravado, drained down to its last drop."
     
-    n "I'm not scared of the train. Any moment, it would start up again and bring us to our destination"
+    n "I'm not scared of the train. Any moment, it would start up again and bring us to our destination."
     
-    n "The only thing that terrifies me, is her eyes."
+    n "The only thing that terrifies me, is her glassy eyes."
     
     nvl clear
     
-    hide alexis
+    play music dread loop fadein 1.0 fadeout 1.0
     
-    n "But even that...fails to reach her."
+    hide alexis with dissolve
     
-    n "It's as if I don't even exist."
+    n "To her, I might as well not exist."
     
     n "Was it because I didn't help her up in the beginning?"
     
@@ -1151,7 +1244,7 @@ label trainCrash:
     
     nvl clear
     
-    scene trainDoor
+    scene trainDoor with wipeleft
     
     n "In every carriage, there's an emergency communication button."
     
@@ -1170,17 +1263,19 @@ label trainCrash:
     nvl clear
     play sound static
     
-    n "Hello?"
-    
-    play sound static
     
     i "(*Bzzzt*)"
     
     na "Hello? Is this the driver?"
     
+    play sound static
+
+    
     i "..."
     
     na "Hello? Can you hear me?"
+    
+    play sound static
     
     i "..."
     
@@ -1200,13 +1295,17 @@ label trainCrash:
         
     n "But the handles and doors and seats meshed together into one unrecognisable jungle gym, such that anything past the third carriage could have been easily hidden."
     
-    n "As I craned my head trying to get a better view, the veins of my heart froze ice cold."
+    n "As I craned my head trying to get a better view, my heart froze ice cold."
     
     nvl clear
     
-    scene trainMiddle with dissolve
 
-    n "There was nothing in sight save for the insides of the train."
+    
+    scene trainMiddle with dissolve
+    
+    n "It was the first time I had properly looked behind us."
+
+    n "And it was only now did I see that the insides of the train were completely bare."
     
     n "No driver, no passengers, no people, nothing."
     
@@ -1216,13 +1315,13 @@ label trainCrash:
     
     nvl clear
     
-    n "Did we really board the train with no one else but ourselves?"
+    n "Did we really board the train with no one else but ourselves?"      
     
-    n "That was unextremely unlikely. Maybe there had been passengers, but they had disappeared somewhere else."
+    n "That was extremely unlikely. Maybe there had been passengers, but they had disappeared somewhere else."
     
-    n "That thought made something rise up in my throat, and I forced the sudden terror back down."
+    n "...but all of them, all at once?"
     
-    n "I didn't want to think about where they had gone."
+    n "And where would they have gone?"
     
     n "If they had rushed towards the emergency exit as well, like Alexis was trying to do, did that mean that she was right?"
     
@@ -1252,11 +1351,15 @@ label trainCrash:
     
     #Howard appears
     
+    show howard close1 with dissolve
+    
     na "...?"
     
     na "(There's someone there!)"
     
-    na "(Hello?)" 
+    na "(Standing dead center in the middle of the train.)"
+    
+    na "Hello?" 
     
     na "(Does he even hear me?)"
     
@@ -1266,7 +1369,11 @@ label trainCrash:
     
     scene trainSide with wipeleft
     
-    a "Alexis, we found someone!"
+    na "Alexis, there's someone!"
+    
+    show alexis surprised with dissolve
+    
+    a "..."
 
     show alexis angry
     
@@ -1276,23 +1383,25 @@ label trainCrash:
     
     na "..What?"
     
-    scene trainMiddle with wipeRight
+    scene trainMiddle with wiperight
+    
+    stop music 
+    
+    show howard close2
     
     na "(Is it my imagination...)"
     
     na "(Or is he a lot closer now?)"
     
-    na "(Almost as if...)
+    na "(Almost as if...)"
     
-    na "(He's running.)
+    na "(He's running.)"
    
     na "(Towards us.)"
     
-    play music dread fadein 1.0
-    
-    #Howard moves
-    
     play sound thud 
+    
+    play music horror loop fadein 1.0 fadeout 1.0
     
     na "(The clang behind me jumpstarts my heart)"
     
@@ -1302,11 +1411,13 @@ label trainCrash:
     
     na "(Alexis is crouched by the handle, and is sticking some sort of metal pole in the gap between the door."
     
-    na "(One of the panels to the seats lies torn open beside her. Had she gotten the pole from there?"
+    na "(One of the panels to the seats lies torn open beside her. Had she gotten the pole from there?)"
     
     na "(Her whole body is arched like a frenzied cat.)"
     
-    na "(As if she's trying to claw her way out from something."
+    na "(As if she's trying to claw her way out from something.)"
+    
+    scene emergency with hpunch
     
     show alexis angry
     
@@ -1314,17 +1425,21 @@ label trainCrash:
     
     scene trainMiddle with slideright
     
-    #Howard has moved
-    
+    show howard close3
+        
     na "(Hey, hey...)"
     
-    na "(Is that even a man?")
+    na "(Who is that?)"
     
-    na "(My body moves on automatic, and slides the door shut.)"
+    na "(He doesn't look like a passenger.)"
     
-    na "(The intercom.)"
+    na "(Or a driver.)"
     
-    na "(We need help.)"
+    na "(I have to call someone.)"
+    
+    na "(They'll know what to do.)"
+    
+    show trainDoor with dissolve
     
     play sound static
         
@@ -1332,9 +1447,13 @@ label trainCrash:
     
     na "Excuse me."
    
-    na "There's a dangerous man on board the train."
+    na "There's a strange man on board the train."
     
     #Howard moves
+    
+    scene trainMiddleHoward with dissolve
+    
+    show howard close4
     
     play sound static
         
@@ -1342,24 +1461,26 @@ label trainCrash:
     
     i "...ac......."
     
-    na "Hello?"
+    na "He has jaws."
     
     i "bla.....ki...."
     play sound static
     
-    scene trainDoor with redFlash
-
+    scene trainMiddleHoward with redFlash
+    
+    show howard close5 with dissolve
     
     na "(Was the intercom damaged?)"
     
     i "Hail.......ack......"
     
-    
     na "(The door won't do any good, won't it?)"
     
-    na "(It has jaws.)"
+    na "(The way it was moving.)"
     
-    na "(It'll tear through the glass and gobble us up.)"
+    na "(It wasn't going to stop until it got my hands on me.)"
+    
+    play sound static
     
     i "Hail...bla...King..."
     
@@ -1368,18 +1489,100 @@ label trainCrash:
     i "Hail...the Black King..."
     
     #flashes of the devestation
+    play sound static
     
-    scene trainSideHorror with redFlash
+    scene trainMiddleHorror with redFlash
     
-    renpy.pause(0.5, True)
+    $ renpy.pause(0.5, True)
     
     scene trainDoor with redFlash
     
-    na "(Alexis hasn't made any progress.)
+    na "(The exit isn't open yet.)"
     
-    na "(Because of her pathetic strength, we're going to be eaten.)"
+    na "(Because of her uselessness, we're going to get gobbled up.)"
     
-    ive stopped here
+    play sound thud
+    
+    na "(I've shut the door...)"
+    
+    na "(But there's no lock.)"
+    
+    scene trainDoorHoward with dissolve
+    
+    na "(It's looking at me.)"
+    
+    na "(And I can hear its whispers.)"
+    
+    na "(Black)"
+    
+    na "(King){nw}"
+    
+    scene trainDoorHoward with vpunch
+    
+    stop music
+    
+    play sound thud
+    
+    show alexis angry
+    
+    a "Run."
+    
+    n "I do what I'm told."
+    
+    show emergency with slideleft
+    
+    n "I pick up the rod that she had left behind."
+    
+    n "I pry open the door with the full brunt of my strength."
+    
+    play sound thud
+    
+    show emergency with hpunch
+    
+    $renpy.pause(0.5, True)
+    
+    show tunnel with dissolve
+    
+    play sound footstepsFast
+    
+    nvl clear
+    
+    n "And just like that..."
+    
+    n "I'm out in the open."
+    
+    n "Towards me is darkness."
+    
+    n "Behind me is madness."
+    
+    n "The last thing I want to do is turn around and look."
+    
+    nvl clear
+    
+    menu: 
+    
+        "Save Alexis.":
+        
+            n "I can't."
+            
+            n "I'm sorry."
+        
+        "Run away.":
+            n "Not a single pause crosses my mind."
+            
+    nvl clear
+    
+    play sound footstepsGravelFast loop
+        
+    n "And I fly across the gravel."
+    
+    n "Letting the tracks be my only guide."
+    
+    
+        
+        
+    
+    #ive stopped here
     
     n "The heat."
     

@@ -49,6 +49,7 @@ image stationGantry ="Bg/stationGantry.jpg"
 image vending ="Bg/vending.jpg"
 image detention ="Bg/detention.jpg"
 image office ="Bg/office.jpg"
+define emergency ="Bg/emergency.jpg"
 
 define flash = Fade(1, 1, 1, color="#fff")
 define redFlash = Fade(0.25, 0.25, 0.25, color="#8a0303")
